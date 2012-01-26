@@ -36,7 +36,7 @@ public class CurrentPositionService {
 			Geocoder geocoder) {
 		currentPosition = GEO_POINT_BREMEN;
 		currentGpsPosition = GEO_POINT_BREMEN;
-		useGps = true;
+		useGps = false;
 		currentPositionListeners = new ArrayList<CurrentPositionListener>();
 
 		this.geocoder = geocoder;

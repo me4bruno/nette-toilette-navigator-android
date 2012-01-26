@@ -36,7 +36,7 @@ public class RestroomListAdapter extends BaseAdapter implements Filterable {
 		ViewHolder holder = null;
 
 		if (convertView == null) {
-			convertView = inflater.inflate(R.layout.show_restrooms_list, null);
+			convertView = inflater.inflate(R.layout.show_restrooms_list_item, null);
 			holder = new ViewHolder();
 			holder.textName = (TextView) convertView
 					.findViewById(R.id.textName);

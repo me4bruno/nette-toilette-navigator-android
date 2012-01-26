@@ -24,7 +24,7 @@ import de.bruns.restrooms.android.Configuration;
 import de.bruns.restrooms.android.data.RestroomData;
 import de.bruns.restrooms.android.service.RestroomDataService;
 
-public class ShowMapActivity extends MapActivity {
+public class ShowRestroomsMapActivity extends MapActivity {
 
 	private static final String LOG_TAG = ShowRestroomDataActivity.class
 			.getSimpleName();
@@ -57,7 +57,7 @@ public class ShowMapActivity extends MapActivity {
 		buttonAsList.setOnTouchListener(new OnTouchListener() {
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
-				startActivity(new Intent(ShowMapActivity.this, ShowRestroomsListActivity.class));
+				startActivity(new Intent(ShowRestroomsMapActivity.this, ShowRestroomsListActivity.class));
 				return true;
 			}
 		});
@@ -65,7 +65,7 @@ public class ShowMapActivity extends MapActivity {
 		buttonPosition.setOnTouchListener(new OnTouchListener() {
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
-				startActivity(new Intent(ShowMapActivity.this, SelectCurrentPositionActivity.class));
+				startActivity(new Intent(ShowRestroomsMapActivity.this, SelectCurrentPositionActivity.class));
 				return true;
 			}
 		});
@@ -112,7 +112,7 @@ public class ShowMapActivity extends MapActivity {
 			RestroomData restroomData = overlayItems.get(index).getRestroomData();
 			String restroomId = restroomData.getName();
 
-			Intent intent = new Intent(ShowMapActivity.this, ShowRestroomDataActivity.class);
+			Intent intent = new Intent(ShowRestroomsMapActivity.this, ShowRestroomDataActivity.class);
 			intent.putExtra(ShowRestroomDataActivity.RESTROOM_ID, restroomId);
 			
 			Log.v(LOG_TAG, "Selected restroom: " + restroomId);

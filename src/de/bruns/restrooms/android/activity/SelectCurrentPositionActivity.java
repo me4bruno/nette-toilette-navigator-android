@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Locale;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Point;
 import android.graphics.drawable.Drawable;
@@ -12,12 +13,15 @@ import android.location.Geocoder;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnTouchListener;
 import android.widget.ImageView;
+import android.widget.RadioGroup;
+import android.widget.RadioGroup.OnCheckedChangeListener;
+import android.widget.Button;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.maps.GeoPoint;
@@ -33,22 +37,51 @@ import de.bruns.restrooms.android.service.CurrentPositionService.CurrentPosition
 
 public class SelectCurrentPositionActivity extends MapActivity {
 
-	private static final int MANUAL_POSITION_ID = 1;
-	private static final int GPS_POSITION_ID = 2;
+	private static final String POS_DESC_GPS = "Nutze GPS-Standort (Marker nicht verschiebbar)";
+	private static final String POS_DESC_MANUAL = "Verschiebe Marker auf momentanen Standort";
 
 	private static final String LOG_TAG = SelectCurrentPositionActivity.class
 			.getSimpleName();
 
+	private CurrentPositionService currentPositionService;
+
 	private MapView mapView;
 	private MapController mapController;
-	private CurrentPositionService currentPositionService;
 	private MyPositionManualOverlay myPositionManualOverlay;
+	
+	private RadioGroup radioGroup;
+	private TextView positionDescription;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.select_current_position);
 
+		positionDescription = (TextView) findViewById(R.id.text_position_description);
+		positionDescription.setText(POS_DESC_MANUAL);
+
+		radioGroup = (RadioGroup) findViewById(R.id.rg_position);
+		radioGroup.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+
+			@Override
+			public void onCheckedChanged(RadioGroup group, int checkedId) {
+				switch (radioGroup.getCheckedRadioButtonId()) {
+				case R.id.rb_position_gps:
+					positionDescription.setText(POS_DESC_GPS);
+					currentPositionService.useGpsPosition();
+					Log.v(LOG_TAG, "Use GPS position");					
+					break;
+				case R.id.rb_position_manual:
+					positionDescription.setText(POS_DESC_MANUAL);
+					GeoPoint manualPosition = currentPositionService.getCurrentPosition();
+					currentPositionService.useManualPosition(manualPosition);
+					Log.v(LOG_TAG, "Use manuell position");
+					break;
+				default:
+				}
+			}
+		});
+		
 		// map view
 		mapView = (MapView) findViewById(R.id.select_current_position_map);
 		mapController = mapView.getController();
@@ -92,35 +125,26 @@ public class SelectCurrentPositionActivity extends MapActivity {
 		mapView.getOverlays().add(myPositionManualOverlay);
 
 		mapView.invalidate();
+		
+		// buttons
+		Button buttonAsList = (Button) findViewById(R.id.button_aslist);
+		buttonAsList.setOnTouchListener(new OnTouchListener() {
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				startActivity(new Intent(SelectCurrentPositionActivity.this, ShowRestroomsListActivity.class));
+				return true;
+			}
+		});
+		Button buttonAsMap = (Button) findViewById(R.id.button_asmap);
+		buttonAsMap.setOnTouchListener(new OnTouchListener() {
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				startActivity(new Intent(SelectCurrentPositionActivity.this, ShowRestroomsMapActivity.class));
+				return true;
+			}
+		});
 	}
 	
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		menu.add(0, MANUAL_POSITION_ID, Menu.NONE, "Manuell Position setzen");
-		menu.add(1, GPS_POSITION_ID, Menu.NONE, "GPS-Position verwenden");
-		return super.onCreateOptionsMenu(menu);
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case MANUAL_POSITION_ID:
-			GeoPoint manualPosition = currentPositionService
-					.getCurrentPosition();
-			currentPositionService.useManualPosition(manualPosition);
-			Log.v(LOG_TAG, "Use manuell position");
-			break;
-		case GPS_POSITION_ID:
-			currentPositionService.useGpsPosition();
-			Log.v(LOG_TAG, "Use GPS position");
-			break;
-
-		default:
-		}
-
-		return super.onOptionsItemSelected(item);
-	}
-
 	@Override
 	protected boolean isRouteDisplayed() {
 		return false;

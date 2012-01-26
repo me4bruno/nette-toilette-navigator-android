@@ -9,7 +9,7 @@
  
 	<ImageView 
 	    android:id="@+id/iconOpen" 
-	    android:contentDescription="@string/openImage"
+	    android:contentDescription="@string/open_image"
 	    android:layout_width="32dip"
 		android:layout_height="37dip" 
 		android:layout_alignParentLeft="true" />

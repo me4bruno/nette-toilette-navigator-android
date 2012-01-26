@@ -11,19 +11,22 @@
 
        <Button
         android:id="@+id/button_streetview"
-        android:layout_width="wrap_content"
+        android:layout_width="0px"
+	    android:layout_weight="1"
         android:layout_height="wrap_content"
         android:text="@string/button_streetview" />
 
     <Button
         android:id="@+id/button_navigation"
-        android:layout_width="wrap_content"
+        android:layout_width="0px"
+	    android:layout_weight="1"
         android:layout_height="wrap_content"
         android:text="@string/button_navigation" />
 
     <Button
         android:id="@+id/button_maps"
-        android:layout_width="wrap_content"
+        android:layout_width="0px"
+	    android:layout_weight="1"
         android:layout_height="wrap_content"
         android:text="@string/button_maps" />
     </LinearLayout>

@@ -60,7 +60,7 @@ public class ShowRestroomDataActivity extends MapActivity {
 		((TextView) findViewById(R.id.txt_distance)).setText(restroom
 				.getDistanceAsString());
 
-		final GeoPoint restroomLocation = ShowMapActivity.getGeoPoint(restroom);
+		final GeoPoint restroomLocation = ShowRestroomsMapActivity.getGeoPoint(restroom);
 
 		// map view
 		MapView mapView = (MapView) findViewById(R.id.map_restroom_location);

@@ -1,19 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout 
   	xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_height="fill_parent" 
 	android:layout_width="fill_parent"
 	>
 
-    <com.google.android.maps.MapView
-     	android:id="@+id/show_map_map"
-     	android:layout_width="fill_parent"
-     	android:layout_height="fill_parent"
-     	android:apiKey="0Q8bs9LEx6q3hQmJxS-EOouZSKlYsv7TEw00Dlg"
-        android:layout_alignParentTop="true"
-        android:layout_marginBottom="10dip"
-        android:layout_above="@+id/layout_buttons" 
-     	android:clickable="true" />
+	<ImageView 
+	    android:background="@drawable/nettetoilette" 
+	    android:id="@+id/bannerImage"
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content"
+		android:layout_alignParentTop="true"
+		android:contentDescription="@string/app_image"
+	 />
+
+	<ListView android:id="@+id/android:list" 
+	    android:layout_width="fill_parent"
+		android:layout_height="wrap_content" 
+		android:layout_marginTop="10dip"
+		android:layout_below="@+id/bannerImage" 
+		android:layout_above="@+id/layout_buttons" 
+		android:drawSelectorOnTop="false"
+		android:layout_marginBottom="10dip" 
+		android:cacheColorHint="#00000000" />
 
 	<LinearLayout
         android:id="@+id/layout_buttons" 
@@ -24,11 +34,11 @@
      >
 	    
 	<Button
-        android:id="@+id/button_aslist"
+        android:id="@+id/button_asmap"
         android:layout_width="0px"
 	    android:layout_weight="1"
         android:layout_height="wrap_content"
-        android:text="@string/button_aslist" 
+        android:text="@string/button_asmap" 
     	/>
 
     <Button
