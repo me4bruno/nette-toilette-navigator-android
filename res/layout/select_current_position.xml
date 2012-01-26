@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.maps.MapView
+        		 android:id="@+id/select_current_position_map"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:clickable="true"
+                 android:apiKey="0Q8bs9LEx6q3hQmJxS-EOouZSKlYsv7TEw00Dlg"
+                 />
+    
+  	<ImageView android:id="@+id/drag"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:src="@drawable/marker"
+    	android:visibility="gone"
+    	android:contentDescription="@string/image_marker"
+  	/>      
+                  
+</RelativeLayout>

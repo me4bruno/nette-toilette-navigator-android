@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Nette Toilette Navigator</string>
+    <string name="image_marker">Marker</string>
+    <string name="restroom_name">Name</string>
+    <string name="restroom_address">Adresse</string>
+    <string name="restroom_openinghours">Öffnungszeiten</string>
+    <string name="restroom_position">Position</string>
+    <string name="restroom_distance">Entfernung</string>
+    <string name="restroom_description">Rohdaten</string>
+    <string name="package_str">de.bruns.restrooms.android</string>
+    <string name="openImage">OpenImage</string>
+    <string name="button_maps">Maps Route</string>
+    <string name="button_navigation">Navigation</string>
+    <string name="button_streetview">Street View</string>
+    <string name="button_aslist">als Liste</string>
+    <string name="button_asmap">als Karte</string>
+    <string name="button_position">Position</string>
+    <string name="button_help">Hilfe</string>
+    
+</resources>

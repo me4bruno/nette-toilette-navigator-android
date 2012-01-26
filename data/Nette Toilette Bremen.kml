@@ -1,0 +1,1031 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <name>Nette Toilette Bremen</name>
+  <description><![CDATA[Hier finden Sie "Nette Toiletten" in Bremen.]]></description>
+  <Style id="style59">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style34">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style35">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style64">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style62">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style12">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style4">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style22">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style41">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style3">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style58">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style5">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style37">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style47">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style8">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style10">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style13">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style25">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style49">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style51">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style38">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style54">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style7">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style32">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style42">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style45">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style27">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style31">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style33">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style29">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style36">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style40">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style39">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style61">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style1">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style53">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style48">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style43">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style14">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style60">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style2">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style18">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style23">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style20">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style21">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style26">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style9">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style19">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style56">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style15">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style28">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style17">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style52">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style46">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style50">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style11">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style24">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style30">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style44">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style63">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style55">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style6">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style57">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style16">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Placemark>
+    <name>Witthus Heimtex-Fachmarkt</name>
+    <Snippet>Witthus Heimtex-Fachmarkt, Heidlerchenstr. 3a, Mo-Sa 9:00-18:00 Uhr</Snippet>
+    <description><![CDATA[Witthus Heimtex-Fachmarkt, Heidlerchenstr. 3a, Mo-Sa 9:00-18:00 Uhr]]></description>
+    <styleUrl>#style59</styleUrl>
+    <Point>
+      <coordinates>8.555577,53.192463,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Vegesacker Kaffeepott</name>
+    <Snippet>Vegesacker Kaffeepott, Reeder-Bischoff-Str. 35/37, Mo-Sa 8:00-18:00 Uhr</Snippet>
+    <description><![CDATA[Vegesacker Kaffeepott, Reeder-Bischoff-Str. 35/37, Mo-Sa 8:00-18:00 Uhr]]></description>
+    <styleUrl>#style34</styleUrl>
+    <Point>
+      <coordinates>8.623338,53.170235,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Akropolis,</name>
+    <Snippet>Akropolis, Lindenstr. 3, Mi-Mo 18:00- 23:00, So und Feiert. 12:00-15:00 + 18:00-</Snippet>
+    <description><![CDATA[Akropolis, Lindenstr. 3, Mi-Mo 18:00- 23:00, So und Feiert. 12:00-15:00 + 18:00-23:30 Uhr]]></description>
+    <styleUrl>#style35</styleUrl>
+    <Point>
+      <coordinates>8.609735,53.175743,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Irodion</name>
+    <Snippet>Irodion, Lindenstr. 64, Di-So 17:30-23:30, So 11:30-14:30 Uhr</Snippet>
+    <description><![CDATA[Irodion, Lindenstr. 64, Di-So 17:30-23:30, So 11:30-14:30 Uhr]]></description>
+    <styleUrl>#style64</styleUrl>
+    <Point>
+      <coordinates>8.603696,53.176834,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Wilksen&amp;Sohn</name>
+    <Snippet>Wilksen&amp;amp;Sohn, Lindenstr. 100, Mo-Do  7:00-17:00, Fr 7:00-13:00 Uhr</Snippet>
+    <description><![CDATA[Wilksen&amp;Sohn, Lindenstr. 100, Mo-Do  7:00-17:00, Fr 7:00-13:00 Uhr]]></description>
+    <styleUrl>#style62</styleUrl>
+    <Point>
+      <coordinates>8.597360,53.178261,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>XXL Elektro</name>
+    <Snippet>XXL Elektro, Striekenkamp 4, Mo-Fr 9:00-19:00, Sa  9:00-18:00 Uhr</Snippet>
+    <description><![CDATA[XXL Elektro, Striekenkamp 4, Mo-Fr 9:00-19:00, Sa  9:00-18:00 Uhr]]></description>
+    <styleUrl>#style12</styleUrl>
+    <Point>
+      <coordinates>8.555208,53.190353,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Gartentechnik</name>
+    <Snippet>Gartentechnik Bremen, Striekenkamp 7, Mo-Sa 8:30-18:30 Uhr</Snippet>
+    <description><![CDATA[Gartentechnik Bremen, Striekenkamp 7, Mo-Sa 8:30-18:30 Uhr]]></description>
+    <styleUrl>#style4</styleUrl>
+    <Point>
+      <coordinates>8.554920,53.190994,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Tim &amp; Teddy</name>
+    <Snippet>Tim &amp;amp; Teddy, Reeder-Bischoff-Str. 39, Mo-Fr 10:00-13:00 + 15:00-18:00 Uhr, S</Snippet>
+    <description><![CDATA[Tim &amp; Teddy, Reeder-Bischoff-Str. 39, Mo-Fr 10:00-13:00 + 15:00-18:00 Uhr, Sa 10:00-14:00 Uhr]]></description>
+    <styleUrl>#style22</styleUrl>
+    <Point>
+      <coordinates>8.622976,53.170319,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Muddy&#39;s</name>
+    <Snippet>Muddy&#39;s, Vegesacker Bahnhofsplatz 34, Mo-So 10:00-01:00, Fr+Sa 10:00-05:00 Uhr</Snippet>
+    <description><![CDATA[Muddy's, Vegesacker Bahnhofsplatz 34, Mo-So 10:00-01:00, Fr+Sa 10:00-05:00 Uhr]]></description>
+    <styleUrl>#style41</styleUrl>
+    <Point>
+      <coordinates>8.629047,53.169495,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>City Marketing</name>
+    <Snippet>City Marketing Vegesack,  Schulkenstr. 2a, Mo-So 11:00-18:00 Uhr</Snippet>
+    <description><![CDATA[City Marketing Vegesack,  Schulkenstr. 2a, Mo-So 11:00-18:00 Uhr]]></description>
+    <styleUrl>#style3</styleUrl>
+    <Point>
+      <coordinates>8.608479,53.172619,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Zum Vegesacker Jungen</name>
+    <Snippet>Zum Vegesacker Jungen, Am Vegesacker Hafen 15, Mi-Mo 15:00-02:00 Uhr</Snippet>
+    <description><![CDATA[Zum Vegesacker Jungen, Am Vegesacker Hafen 15, Mi-Mo 15:00-02:00 Uhr]]></description>
+    <styleUrl>#style58</styleUrl>
+    <Point>
+      <coordinates>8.623455,53.168457,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Zum Gruenen Jaeger</name>
+    <Snippet>Zum Gruenen Jaeger, Farger Str. 100, Di-Sa 17:00-24:00, So 10:00-14:00 + 17:00-2</Snippet>
+    <description><![CDATA[Zum Gruenen Jaeger, Farger Str. 100, Di-Sa 17:00-24:00, So 10:00-14:00 + 17:00-24:00 Uhr]]></description>
+    <styleUrl>#style5</styleUrl>
+    <Point>
+      <coordinates>8.523624,53.203449,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Lokales</name>
+    <Snippet>Lokales, Breite Str. 12, Mo-Fr 11:00-23:00, Sa 11:00-15:00 Uhr</Snippet>
+    <description><![CDATA[Lokales, Breite Str. 12, Mo-Fr 11:00-23:00, Sa 11:00-15:00 Uhr]]></description>
+    <styleUrl>#style37</styleUrl>
+    <Point>
+      <coordinates>8.620345,53.171440,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Goden Wind</name>
+    <Snippet>Goden Wind, Rohrstr. 5, Mo-So 9:00-24:00 Uhr</Snippet>
+    <description><![CDATA[Goden Wind, Rohrstr. 5, Mo-So 9:00-24:00 Uhr]]></description>
+    <styleUrl>#style47</styleUrl>
+    <Point>
+      <coordinates>8.623332,53.168682,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Le Primeur</name>
+    <Snippet>Le Primeur, Vegesacker Bahnhofsplatz 2, 15:00-01:00 Uhr</Snippet>
+    <description><![CDATA[Le Primeur, Vegesacker Bahnhofsplatz 2, 15:00-01:00 Uhr]]></description>
+    <styleUrl>#style8</styleUrl>
+    <Point>
+      <coordinates>8.628303,53.170197,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Ihle Gance</name>
+    <Snippet>Ihle Gance, Hindenburgstr. 7, taeglich 12:00-23.00 Uhr</Snippet>
+    <description><![CDATA[Ihle Gance, Hindenburgstr. 7, taeglich 12:00-23.00 Uhr]]></description>
+    <styleUrl>#style10</styleUrl>
+    <Point>
+      <coordinates>8.699147,53.168407,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Ortsamt Vegesack</name>
+    <Snippet>Ortsamt Vegesack, Weserstr. 75, Mo-Mi 7:00-15:00 Uhr, Fr 7:00-14:00 Uhr, Do 7:00</Snippet>
+    <description><![CDATA[Ortsamt Vegesack, Weserstr. 75, Mo-Mi 7:00-15:00 Uhr, Fr 7:00-14:00 Uhr, Do 7:00-18:00 Uhr]]></description>
+    <styleUrl>#style13</styleUrl>
+    <Point>
+      <coordinates>8.615087,53.171974,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Zur Glaesernen Werft</name>
+    <Snippet>Zur Glaesernen Werft, Schulkenstr. 2, taeglich 10:00-24:00 Uhr</Snippet>
+    <description><![CDATA[Zur Glaesernen Werft, Schulkenstr. 2, taeglich 10:00-24:00 Uhr]]></description>
+    <styleUrl>#style25</styleUrl>
+    <Point>
+      <coordinates>8.608120,53.172188,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Renoir (Lesum)</name>
+    <Snippet>Renoir (Lesum), An der Lesumer Kirche 1, Mo-So 11:00-24:00 Uhr</Snippet>
+    <description><![CDATA[Renoir (Lesum), An der Lesumer Kirche 1, Mo-So 11:00-24:00 Uhr]]></description>
+    <styleUrl>#style49</styleUrl>
+    <Point>
+      <coordinates>8.691510,53.167995,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Stadtbibliothek Vegesack</name>
+    <Snippet>Stadtbibliothek Vegesack, Aumunder Heerweg 87, MoMiDo 11:00-18:00, Fr 11:00-17:0</Snippet>
+    <description><![CDATA[Stadtbibliothek Vegesack, Aumunder Heerweg 87, MoMiDo 11:00-18:00, Fr 11:00-17:00, Sa 10:00-13:00 Uhr]]></description>
+    <styleUrl>#style51</styleUrl>
+    <Point>
+      <coordinates>8.620214,53.174236,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Haven Hoeoft</name>
+    <Snippet>Haven Hoeoevt, Zum Alten Speicher 1-2, Mo-Sa 9:00-20:00 Uhr</Snippet>
+    <description><![CDATA[Haven Hoeoevt, Zum Alten Speicher 1-2, Mo-Sa 9:00-20:00 Uhr]]></description>
+    <styleUrl>#style38</styleUrl>
+    <Point>
+      <coordinates>8.627279,53.168339,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Buergerhaus Vegesack</name>
+    <Snippet>Buergerhaus Vegesack, Kirchheide 49, Mo-Fr 9:00-20:.00, Sa 9:00-14:00 Uhr</Snippet>
+    <description><![CDATA[Buergerhaus Vegesack, Kirchheide 49, Mo-Fr 9:00-20:.00, Sa 9:00-14:00 Uhr]]></description>
+    <styleUrl>#style54</styleUrl>
+    <Point>
+      <coordinates>8.617690,53.174362,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Lesumer Hof</name>
+    <Snippet>Lesumer Hof, Oberreihe 8,</Snippet>
+    <description><![CDATA[Lesumer Hof, Oberreihe 8,]]></description>
+    <styleUrl>#style7</styleUrl>
+    <Point>
+      <coordinates>8.689255,53.170422,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Zum Biber</name>
+    <Snippet>Zum Biber, Heinrich-Hoops-Str. 32, Mo-Fr 17:00-22:00, Sa-So 10:30-14:00 u. 17:00</Snippet>
+    <description><![CDATA[Zum Biber, Heinrich-Hoops-Str. 32, Mo-Fr 17:00-22:00, Sa-So 10:30-14:00 u. 17:00-22:00 Uhr]]></description>
+    <styleUrl>#style32</styleUrl>
+    <Point>
+      <coordinates>8.715993,53.153393,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Italia Eiscafe</name>
+    <Snippet>Italia Eiscafe, Hindenburgstr. 39/41, Mo-So 9:30-22:30 Uhr, Di Ruhetag</Snippet>
+    <description><![CDATA[Italia Eiscafe, Hindenburgstr. 39/41, Mo-So 9:30-22:30 Uhr, Di Ruhetag]]></description>
+    <styleUrl>#style42</styleUrl>
+    <Point>
+      <coordinates>8.693084,53.168583,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Pusta-Stuben</name>
+    <Snippet>Pusta-Stuben, Oberblockland 5, Mi-Mo 10:00-22:00 Uhr</Snippet>
+    <description><![CDATA[Pusta-Stuben, Oberblockland 5, Mi-Mo 10:00-22:00 Uhr]]></description>
+    <styleUrl>#style45</styleUrl>
+    <Point>
+      <coordinates>8.860990,53.132797,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Port Piet</name>
+    <Snippet>Port Piet, Neukirchstr. 36, So-Do 10:00-22:00 Uhr</Snippet>
+    <description><![CDATA[Port Piet, Neukirchstr. 36, So-Do 10:00-22:00 Uhr]]></description>
+    <styleUrl>#style27</styleUrl>
+    <Point>
+      <coordinates>8.811692,53.093109,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>emma am see</name>
+    <Snippet>emma am see, Im B rgerpark, Di-So 9:00-23:00 Uhr</Snippet>
+    <description><![CDATA[emma am see, Im B rgerpark, Di-So 9:00-23:00 Uhr]]></description>
+    <styleUrl>#style31</styleUrl>
+    <Point>
+      <coordinates>8.823997,53.094280,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Akropolis</name>
+    <Snippet>Akropolis, H.-H.-Meier-Allee 42, Mo-Do 18:00-23:30; Fr-So 12:00-14:30 u. 18:00-2</Snippet>
+    <description><![CDATA[Akropolis, H.-H.-Meier-Allee 42, Mo-Do 18:00-23:30; Fr-So 12:00-14:30 u. 18:00-23:30 Uhr]]></description>
+    <styleUrl>#style33</styleUrl>
+    <Point>
+      <coordinates>8.845709,53.092541,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Vinostado</name>
+    <Snippet>Vinostado, Wachmannstr. 47, Mo-Sa 17:30-24:00 Uhr</Snippet>
+    <description><![CDATA[Vinostado, Wachmannstr. 47, Mo-Sa 17:30-24:00 Uhr]]></description>
+    <styleUrl>#style29</styleUrl>
+    <Point>
+      <coordinates>8.829899,53.085396,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Hemingway&#39;s</name>
+    <Snippet>Hemingway&#39;s, Schwachhauser-Heer-Str. 213, Mo-So 16:00-01:00 Uhr</Snippet>
+    <description><![CDATA[Hemingway's, Schwachhauser-Heer-Str. 213, Mo-So 16:00-01:00 Uhr]]></description>
+    <styleUrl>#style36</styleUrl>
+    <Point>
+      <coordinates>8.852937,53.086105,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Lilie</name>
+    <Snippet>Lilie, Hemmstr. 159, taeglich 10:00-23:00 Uhr</Snippet>
+    <description><![CDATA[Lilie, Hemmstr. 159, taeglich 10:00-23:00 Uhr]]></description>
+    <styleUrl>#style40</styleUrl>
+    <Point>
+      <coordinates>8.805788,53.093552,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Alt Findorff</name>
+    <Snippet>Alt Findorff, Hemmstr. 206, Mo-Fr 10:00-21.00, So 11:00-20:00 Uhr</Snippet>
+    <description><![CDATA[Alt Findorff, Hemmstr. 206, Mo-Fr 10:00-21.00, So 11:00-20:00 Uhr]]></description>
+    <styleUrl>#style39</styleUrl>
+    <Point>
+      <coordinates>8.808709,53.095230,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Artemis</name>
+    <Snippet>Artemis, Neukirchstr. 40, Mo-Sa 17:30-24.00, So+Feiertags 12:00-14.30, So 17:30-</Snippet>
+    <description><![CDATA[Artemis, Neukirchstr. 40, Mo-Sa 17:30-24.00, So+Feiertags 12:00-14.30, So 17:30-24:00 Uhr]]></description>
+    <styleUrl>#style61</styleUrl>
+    <Point>
+      <coordinates>8.811535,53.093300,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>FotoStudio 8</name>
+    <Snippet>FotoStudio 8, Hemmstr. 145, Mo-Do 7:00-17:00, Fr 7:00-13:00 Uhr</Snippet>
+    <description><![CDATA[FotoStudio 8, Hemmstr. 145, Mo-Do 7:00-17:00, Fr 7:00-13:00 Uhr]]></description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>8.804686,53.093212,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Oniro</name>
+    <Snippet>Oniro, Admiralstr. 7-9, Mo-Fr 17:30-1:00, sa 14:30-24:00, So 17:30-24:00</Snippet>
+    <description><![CDATA[Oniro, Admiralstr. 7-9, Mo-Fr 17:30-1:00, sa 14:30-24:00, So 17:30-24:00]]></description>
+    <styleUrl>#style53</styleUrl>
+    <Point>
+      <coordinates>8.808172,53.088795,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Rolf Flato</name>
+    <Snippet>Rolf Flato, Hemmstr. 107, Mo-Do 7:00-17:00, Fr 7:00-13:00 Uhr</Snippet>
+    <description><![CDATA[Rolf Flato, Hemmstr. 107, Mo-Do 7:00-17:00, Fr 7:00-13:00 Uhr]]></description>
+    <styleUrl>#style48</styleUrl>
+    <Point>
+      <coordinates>8.802408,53.092125,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Sentosa</name>
+    <Snippet>Sentosa, Mo-So 12:00-15:00 u. 17:30-23:00 Uhr</Snippet>
+    <description><![CDATA[Sentosa, Mo-So 12:00-15:00 u. 17:30-23:00 Uhr]]></description>
+    <styleUrl>#style43</styleUrl>
+    <Point>
+      <coordinates>8.810620,53.096607,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Villa Kunterbunt</name>
+    <Snippet>Villa Kunterbunt, M nchener Str. 80, Di-So 10:00-18:00 Uhr</Snippet>
+    <description><![CDATA[Villa Kunterbunt, M nchener Str. 80, Di-So 10:00-18:00 Uhr]]></description>
+    <styleUrl>#style14</styleUrl>
+    <Point>
+      <coordinates>8.802249,53.094791,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Becks Bistro</name>
+    <Snippet>Becks Bistro, Am Markt 9, Mo-So</Snippet>
+    <description><![CDATA[Becks Bistro, Am Markt 9, Mo-So]]></description>
+    <styleUrl>#style60</styleUrl>
+    <Point>
+      <coordinates>8.806867,53.076057,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Cafe Knigge</name>
+    <Snippet>Caf‚ Knigge, S”gestr. 42/44, Mo-Sa 9:00-18:30, So 11:00-18:00 Uhr</Snippet>
+    <description><![CDATA[<div dir="ltr">Cafe Knigge, Soegestr. 42/44, Mo-Sa 9:00-18:30, So 11:00-18:00 Uhr</div>]]></description>
+    <styleUrl>#style2</styleUrl>
+    <Point>
+      <coordinates>8.807874,53.078075,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>bei Balu</name>
+    <Snippet>bei Balu, Friedrich-Eber-Str. 53, Mo-Do 16:00-2:00, Fr-So 14:00-2:00 Uhr</Snippet>
+    <description><![CDATA[bei Balu, Friedrich-Eber-Str. 53, Mo-Do 16:00-2:00, Fr-So 14:00-2:00 Uhr]]></description>
+    <styleUrl>#style18</styleUrl>
+    <Point>
+      <coordinates>8.799889,53.070667,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Meier&#39;s</name>
+    <Snippet>Meier&#39;s, Gastfeldstr. 67, Mo-So 10:00-22:00 Uhr</Snippet>
+    <description><![CDATA[Meier's, Gastfeldstr. 67, Mo-So 10:00-22:00 Uhr]]></description>
+    <styleUrl>#style23</styleUrl>
+    <Point>
+      <coordinates>8.797450,53.063942,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Murphys Corner</name>
+    <Snippet>Murphys Corner, Buntentorsteinweg 217, Di-So. 17:00-2:00 Uhr</Snippet>
+    <description><![CDATA[Murphys Corner, Buntentorsteinweg 217, Di-So. 17:00-2:00 Uhr]]></description>
+    <styleUrl>#style20</styleUrl>
+    <Point>
+      <coordinates>8.810375,53.061581,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Sudhaus</name>
+    <Snippet>Sudhaus, Buntentorsteinweg 120, Mo-So 11:30-24:00 Uhr</Snippet>
+    <description><![CDATA[Sudhaus, Buntentorsteinweg 120, Mo-So 11:30-24:00 Uhr]]></description>
+    <styleUrl>#style21</styleUrl>
+    <Point>
+      <coordinates>8.806151,53.065483,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>TeleNetcafe</name>
+    <Snippet>TeleNetcaf‚, Langemarkstr. 68-70, Mo-Sa 10:30-24:00, So+Feiertag 12:00-24:00</Snippet>
+    <description><![CDATA[<div dir="ltr">TeleNetcafe, Langemarkstr. 68-70, Mo-Sa 10:30-24:00, So+Feiertag 12:00-24:00</div>]]></description>
+    <styleUrl>#style26</styleUrl>
+    <Point>
+      <coordinates>8.794136,53.074074,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Veg. World Werder</name>
+    <Snippet>Veg. World Werder, Neustadtswall 12d, Mo-Fr 11:30-14:30 u. 17:30-22:45, Sa 15:00</Snippet>
+    <description><![CDATA[Veg. World Werder, Neustadtswall 12d, Mo-Fr 11:30-14:30 u. 17:30-22:45, Sa 15:00-22:45, So 12:30-22:45 Uhr]]></description>
+    <styleUrl>#style9</styleUrl>
+    <Point>
+      <coordinates>8.791406,53.073647,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Cafetiero</name>
+    <Snippet>Cafetiero, Domshof 22, Mo-Fr 8:00-19:00, Sa 9:00-18:00 Uhr</Snippet>
+    <description><![CDATA[Cafetiero, Domshof 22, Mo-Fr 8:00-19:00, Sa 9:00-18:00 Uhr]]></description>
+    <styleUrl>#style19</styleUrl>
+    <Point>
+      <coordinates>8.809093,53.077019,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Lloyd Caffee</name>
+    <Snippet>Lloyd Caffee, Fabrikenufer 115,</Snippet>
+    <description><![CDATA[Lloyd Caffee, Fabrikenufer 115,]]></description>
+    <styleUrl>#style56</styleUrl>
+    <Point>
+      <coordinates>8.765818,53.102871,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Salon Tulai</name>
+    <Snippet>Salon Tulai, Lesumerheerstr. 93, 28717 Bremen, Di-Sa 10:00-18:00  Uhr</Snippet>
+    <description><![CDATA[Salon Tulai, Lesumerheerstr. 93, 28717 Bremen, Di-Sa 10:00-18:00  Uhr]]></description>
+    <styleUrl>#style15</styleUrl>
+    <Point>
+      <coordinates>8.666828,53.175182,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Bus-Ticket-Center</name>
+    <Snippet>Bus-Ticket-Center, Breitenweg 13, Mo.-Fr. 9:20-18:00,Sa 10:00-10:00, So 14:00-18</Snippet>
+    <description><![CDATA[Bus-Ticket-Center, Breitenweg 13, Mo.-Fr. 9:20-18:00,Sa 10:00-10:00, So 14:00-18:00]]></description>
+    <styleUrl>#style28</styleUrl>
+    <Point>
+      <coordinates>8.807174,53.083603,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Tandur</name>
+    <Snippet>Tandur, Sielwall 5, taegl. 11:00 - 05:00 Uhr</Snippet>
+    <description><![CDATA[Tandur, Sielwall 5, taegl. 11:00 - 05:00 Uhr]]></description>
+    <styleUrl>#style17</styleUrl>
+    <Point>
+      <coordinates>8.823186,53.072582,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Eis Panceria</name>
+    <Snippet>Eis Panceria, Ostertorsteinweg 73, Mo-Sa 10:00-21:00, So. 11:00-21:00</Snippet>
+    <description><![CDATA[Eis Panceria, Ostertorsteinweg 73, Mo-Sa 10:00-21:00, So. 11:00-21:00]]></description>
+    <styleUrl>#style52</styleUrl>
+    <Point>
+      <coordinates>8.819127,53.072468,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Haifischbecken</name>
+    <Snippet>Haifischbecken, Vor dem Steintor 156, taegl. 15:00 - 02:00 Uhr</Snippet>
+    <description><![CDATA[Haifischbecken, Vor dem Steintor 156, taegl. 15:00 - 02:00 Uhr]]></description>
+    <styleUrl>#style46</styleUrl>
+    <Point>
+      <coordinates>8.830792,53.071590,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Bauernstuebchen</name>
+    <Snippet>Bauernstuebchen, Vor dem Steintor 216, taegl. 00:00 - 24:00 Uhr</Snippet>
+    <description><![CDATA[Bauernstuebchen, Vor dem Steintor 216, taegl. 00:00 - 24:00 Uhr]]></description>
+    <styleUrl>#style50</styleUrl>
+    <Point>
+      <coordinates>8.833188,53.071102,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Burgerhauss Karma</name>
+    <Snippet>Burgerhaus Karma, Vor dem Steintor 23, taegl. 12:00 - 24:00</Snippet>
+    <description><![CDATA[Burgerhaus Karma, Vor dem Steintor 23, taegl. 12:00 - 24:00]]></description>
+    <styleUrl>#style11</styleUrl>
+    <Point>
+      <coordinates>8.824785,53.072929,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Buergerhaus Weserterrassen</name>
+    <Snippet>Buergerhaus Weserterrassen, Osterdeich 70b, Di-So 10:00-23:00, Mo 12:00-23:00</Snippet>
+    <description><![CDATA[Buergerhaus Weserterrassen, Osterdeich 70b, Di-So 10:00-23:00, Mo 12:00-23:00]]></description>
+    <styleUrl>#style24</styleUrl>
+    <Point>
+      <coordinates>8.832120,53.068405,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Amadeus</name>
+    <Snippet>Amadeus, Hamburgerstrasse 44, Mo -Sa. 11:00-22:00, So 10:00-22:00 Uhr</Snippet>
+    <description><![CDATA[Amadeus, Hamburgerstrasse 44, Mo -Sa. 11:00-22:00, So 10:00-22:00 Uhr]]></description>
+    <styleUrl>#style30</styleUrl>
+    <Point>
+      <coordinates>8.837705,53.070034,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Faehrhalle</name>
+    <Snippet>Faehrhalle, Faehrstr. 25, Di-Sa 14:00-01:00, Mo 14:00-19:00 Uhr</Snippet>
+    <description><![CDATA[Faehrhalle, Faehrstr. 25, Di-Sa 14:00-01:00, Mo 14:00-19:00 Uhr]]></description>
+    <styleUrl>#style44</styleUrl>
+    <Point>
+      <coordinates>8.860956,53.066246,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Eiscafe de Luca</name>
+    <Snippet>Eiscafe de Luca, Foehrenstr. 42, taegl. 10:00 - 22:00 Uhr</Snippet>
+    <description><![CDATA[Eiscafe de Luca, Foehrenstr. 42, taegl. 10:00 - 22:00 Uhr]]></description>
+    <styleUrl>#style63</styleUrl>
+    <Point>
+      <coordinates>8.876958,53.063465,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Buergerhaus Mahndorf</name>
+    <Snippet>Buergerhaus Mahndorf, Mahndorfer Bahnhof 10, Mo-Fr 08:00-22:00 Uhr</Snippet>
+    <description><![CDATA[Buergerhaus Mahndorf, Mahndorfer Bahnhof 10, Mo-Fr 08:00-22:00 Uhr]]></description>
+    <styleUrl>#style55</styleUrl>
+    <Point>
+      <coordinates>8.945719,53.039047,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Buergerhaus Hemelingen</name>
+    <Snippet>Buergerhaus Hemelingen, Godehardstr. 4, Mo-Do 08:00-22:00, Fr 08:00-8:00 Uhr</Snippet>
+    <description><![CDATA[Buergerhaus Hemelingen, Godehardstr. 4, Mo-Do 08:00-22:00, Fr 08:00-8:00 Uhr]]></description>
+    <styleUrl>#style6</styleUrl>
+    <Point>
+      <coordinates>8.887382,53.058350,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Micky Maus</name>
+    <Snippet>Micky Maus, Brueggenweg 29, taegl. 00:00-24:00 Uhr</Snippet>
+    <description><![CDATA[Micky Maus, Brueggenweg 29, taegl. 00:00-24:00 Uhr]]></description>
+    <styleUrl>#style57</styleUrl>
+    <Point>
+      <coordinates>8.894240,53.053432,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Aral Tankstelle</name>
+    <Snippet>Aral Tankstelle, Hannoverschestr. 142, taegl. 00:00-24:00 Uhr</Snippet>
+    <description><![CDATA[Aral Tankstelle, Hannoverschestr. 142, taegl. 00:00-24:00 Uhr]]></description>
+    <styleUrl>#style16</styleUrl>
+    <Point>
+      <coordinates>8.891580,53.048313,0.000000</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

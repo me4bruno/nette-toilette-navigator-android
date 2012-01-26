@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" creator="GPS TrackMaker"
+	version="1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+	<metadata>
+		<link href="http://www.gpstm.com">
+			<text>Geo Studio Tecnology Ltd</text>
+		</link>
+		<time>2011-11-01T14:48:47Z</time>
+		<bounds minlat="53.039038" minlon="8.523640" maxlat="53.203443"
+			maxlon="8.945732" />
+	</metadata>
+	<wpt lat="53.192453346" lon="8.555593028">
+		<ele>0.000000</ele>
+		<name>Witthus He</name>
+		<cmt>2.00000</cmt>
+		<desc>2.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.170227261" lon="8.623353308">
+		<ele>0.000000</ele>
+		<name>Vegesacker</name>
+		<cmt>16.00000</cmt>
+		<desc>16.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.175736423" lon="8.609750754">
+		<ele>0.000000</ele>
+		<name>Akropolis,</name>
+		<cmt>8.00000</cmt>
+		<desc>8.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.176824361" lon="8.603712004">
+		<ele>0.000000</ele>
+		<name>Irodion, L</name>
+		<cmt>7.00000</cmt>
+		<desc>7.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.178253163" lon="8.597375798">
+		<ele>0.000000</ele>
+		<name>Wilksen&amp;So</name>
+		<cmt>6.00000</cmt>
+		<desc>6.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.190345966" lon="8.555223814">
+		<ele>0.000000</ele>
+		<name>XXL Elektr</name>
+		<cmt>4.00000</cmt>
+		<desc>4.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.190984989" lon="8.554935544">
+		<ele>0.000000</ele>
+		<name>Gartentech</name>
+		<cmt>3.00000</cmt>
+		<desc>3.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.170310607" lon="8.622991332">
+		<ele>0.000000</ele>
+		<name>Tim &amp; Tedd</name>
+		<cmt>15.00000</cmt>
+		<desc>15.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.169484995" lon="8.629062451">
+		<ele>0.000000</ele>
+		<name>Muddy's, V</name>
+		<cmt>20.00000</cmt>
+		<desc>20.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.172610264" lon="8.608494766">
+		<ele>0.000000</ele>
+		<name>City Marke</name>
+		<cmt>9.00000</cmt>
+		<desc>9.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.168448308" lon="8.623470700">
+		<ele>0.000000</ele>
+		<name>Zum Vegesa</name>
+		<cmt>18.00000</cmt>
+		<desc>18.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.203442958" lon="8.523640450">
+		<ele>0.000000</ele>
+		<name>Zum Gruene</name>
+		<cmt>1.00000</cmt>
+		<desc>1.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.171430865" lon="8.620360820">
+		<ele>0.000000</ele>
+		<name>Lokales, B</name>
+		<cmt>14.00000</cmt>
+		<desc>14.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.168674220" lon="8.623347482">
+		<ele>0.000000</ele>
+		<name>Goden Wind</name>
+		<cmt>17.00000</cmt>
+		<desc>17.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.170187267" lon="8.628318405">
+		<ele>0.000000</ele>
+		<name>Le Primeur</name>
+		<cmt>19.00000</cmt>
+		<desc>19.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.168399030" lon="8.699162403">
+		<ele>0.000000</ele>
+		<name>Ihle Gance</name>
+		<cmt>24.00000</cmt>
+		<desc>24.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.171964634" lon="8.615102268">
+		<ele>0.000000</ele>
+		<name>Ortsamt Ve</name>
+		<cmt>11.00000</cmt>
+		<desc>11.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.172180101" lon="8.608135026">
+		<ele>0.000000</ele>
+		<name>Zur Glaese</name>
+		<cmt>10.00000</cmt>
+		<desc>10.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.167987525" lon="8.691524533">
+		<ele>0.000000</ele>
+		<name>Renoir (Le</name>
+		<cmt>23.00000</cmt>
+		<desc>23.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.174227459" lon="8.620229236">
+		<ele>0.000000</ele>
+		<name>Stadtbibli</name>
+		<cmt>13.00000</cmt>
+		<desc>13.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.168328957" lon="8.627294393">
+		<ele>0.000000</ele>
+		<name>Haven Hoeo</name>
+		<cmt>21.00000</cmt>
+		<desc>21.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.174354843" lon="8.617705768">
+		<ele>0.000000</ele>
+		<name>Buergerhau</name>
+		<cmt>12.00000</cmt>
+		<desc>12.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.170411577" lon="8.689270199">
+		<ele>0.000000</ele>
+		<name>Lesumer Ho</name>
+		<cmt>22.00000</cmt>
+		<desc>22.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.153383306" lon="8.716008179">
+		<ele>0.000000</ele>
+		<name>Zum Biber,</name>
+		<cmt>26.00000</cmt>
+		<desc>26.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.168573619" lon="8.693098689">
+		<ele>0.000000</ele>
+		<name>Italia Eis</name>
+		<cmt>25.00000</cmt>
+		<desc>25.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.132789472" lon="8.861003382">
+		<ele>0.000000</ele>
+		<name>Pusta-Stub</name>
+		<cmt>0.00000</cmt>
+		<desc>0.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.093100971" lon="8.811706412">
+		<ele>0.000000</ele>
+		<name>Port Piet,</name>
+		<cmt>0.00000</cmt>
+		<desc>0.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.094272845" lon="8.824011113">
+		<ele>0.000000</ele>
+		<name>emma am se</name>
+		<cmt>0.00000</cmt>
+		<desc>0.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.092533445" lon="8.845723193">
+		<ele>0.000000</ele>
+		<name>Akropolis,</name>
+		<cmt>0.00000</cmt>
+		<desc>0.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.085387100" lon="8.829912665">
+		<ele>0.000000</ele>
+		<name>Vinostado,</name>
+		<cmt>0.00000</cmt>
+		<desc>0.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.086095799" lon="8.852951111">
+		<ele>0.000000</ele>
+		<name>Hemingway'</name>
+		<cmt>0.00000</cmt>
+		<desc>0.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.093541626" lon="8.805801516">
+		<ele>0.000000</ele>
+		<name>Lilie, Hem</name>
+		<cmt>0.00000</cmt>
+		<desc>0.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.095222957" lon="8.808723026">
+		<ele>0.000000</ele>
+		<name>Alt Findor</name>
+		<cmt>0.00000</cmt>
+		<desc>0.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.093291978" lon="8.811548787">
+		<ele>0.000000</ele>
+		<name>Artemis, N</name>
+		<cmt>0.00000</cmt>
+		<desc>0.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.093205329" lon="8.804699845">
+		<ele>0.000000</ele>
+		<name>FotoStudio</name>
+		<cmt>0.00000</cmt>
+		<desc>0.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.088785244" lon="8.808185972">
+		<ele>0.000000</ele>
+		<name>Oniro, Adm</name>
+		<cmt>0.00000</cmt>
+		<desc>0.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.092117218" lon="8.802421703">
+		<ele>0.000000</ele>
+		<name>Rolf Flato</name>
+		<cmt>0.00000</cmt>
+		<desc>0.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.096600371" lon="8.810633645">
+		<ele>0.000000</ele>
+		<name>Sentosa, M</name>
+		<cmt>0.00000</cmt>
+		<desc>0.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.094783741" lon="8.802262910">
+		<ele>0.000000</ele>
+		<name>Villa Kunt</name>
+		<cmt>0.00000</cmt>
+		<desc>0.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.076048116" lon="8.806881407">
+		<ele>0.000000</ele>
+		<name>Becks Bist</name>
+		<cmt>0.00000</cmt>
+		<desc>0.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.078067170" lon="8.807887930">
+		<ele>0.000000</ele>
+		<name>Cafe Knigg</name>
+		<cmt>0.00000</cmt>
+		<desc>0.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.070658912" lon="8.799902666">
+		<ele>0.000000</ele>
+		<name>bei Balu, </name>
+		<cmt>0.00000</cmt>
+		<desc>0.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.063934220" lon="8.797463764">
+		<ele>0.000000</ele>
+		<name>Meier's, G</name>
+		<cmt>0.00000</cmt>
+		<desc>0.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.061572335" lon="8.810388968">
+		<ele>0.000000</ele>
+		<name>Murphys Co</name>
+		<cmt>0.00000</cmt>
+		<desc>0.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.065474340" lon="8.806164477">
+		<ele>0.000000</ele>
+		<name>Sudhaus, B</name>
+		<cmt>0.00000</cmt>
+		<desc>0.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.074066167" lon="8.794150293">
+		<ele>0.000000</ele>
+		<name>TeleNetcaf</name>
+		<cmt>0.00000</cmt>
+		<desc>0.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.073639031" lon="8.791420117">
+		<ele>0.000000</ele>
+		<name>Veg. World</name>
+		<cmt>0.00000</cmt>
+		<desc>0.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.077009972" lon="8.809107025">
+		<ele>0.000000</ele>
+		<name>Cafetiero,</name>
+		<cmt>0.00000</cmt>
+		<desc>0.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.102864373" lon="8.765832282">
+		<ele>0.000000</ele>
+		<name>Lloyd Caff</name>
+		<cmt>0.00000</cmt>
+		<desc>0.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.175172119" lon="8.666843357">
+		<ele>0.000000</ele>
+		<name>Salon Tula</name>
+		<cmt>0.00000</cmt>
+		<desc>0.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.083595973" lon="8.807188219">
+		<ele>0.000000</ele>
+		<name>Bus-Ticket</name>
+		<cmt>0.00000</cmt>
+		<desc>0.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.072573010" lon="8.823199826">
+		<ele>0.000000</ele>
+		<name>Tandur, Si</name>
+		<cmt>0.00000</cmt>
+		<desc>0.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.072460476" lon="8.819140819">
+		<ele>0.000000</ele>
+		<name>Eis Pancer</name>
+		<cmt>0.00000</cmt>
+		<desc>0.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.071583728" lon="8.830805621">
+		<ele>0.000000</ele>
+		<name>Haifischbe</name>
+		<cmt>0.00000</cmt>
+		<desc>0.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.071096131" lon="8.833201863">
+		<ele>0.000000</ele>
+		<name>Bauernstue</name>
+		<cmt>0.00000</cmt>
+		<desc>0.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.072922522" lon="8.824799117">
+		<ele>0.000000</ele>
+		<name>Burgerhaus</name>
+		<cmt>0.00000</cmt>
+		<desc>0.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.068396120" lon="8.832133712">
+		<ele>0.000000</ele>
+		<name>Buergerhau</name>
+		<cmt>0.00000</cmt>
+		<desc>0.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.070026377" lon="8.837718271">
+		<ele>0.000000</ele>
+		<name>Amadeus, H</name>
+		<cmt>0.00000</cmt>
+		<desc>0.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.066239420" lon="8.860969247">
+		<ele>0.000000</ele>
+		<name>Faehrhalle</name>
+		<cmt>0.00000</cmt>
+		<desc>0.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.063456705" lon="8.876971308">
+		<ele>0.000000</ele>
+		<name>Eiscafe de</name>
+		<cmt>0.00000</cmt>
+		<desc>0.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.039038446" lon="8.945731986">
+		<ele>0.000000</ele>
+		<name>Buergerhau</name>
+		<cmt>0.00000</cmt>
+		<desc>0.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.058339861" lon="8.887395592">
+		<ele>0.000000</ele>
+		<name>Buergerhau</name>
+		<cmt>0.00000</cmt>
+		<desc>0.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.053423120" lon="8.894253020">
+		<ele>0.000000</ele>
+		<name>Micky Maus</name>
+		<cmt>0.00000</cmt>
+		<desc>0.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+	<wpt lat="53.048304042" lon="8.891593263">
+		<ele>0.000000</ele>
+		<name>Aral Tanks</name>
+		<cmt>0.00000</cmt>
+		<desc>0.00000</desc>
+		<sym>Restroom</sym>
+	</wpt>
+</gpx>
