@@ -7,7 +7,8 @@
     <string name="activity_restrooms_list">Nette Toilette Navigator - Liste</string>
     <string name="activity_restrooms_map">Nette Toilette Navigator - Karte</string>
     <string name="activity_restroom_data">Nette Toilette Navigator - </string>
-    <string name="activity_current_position">Nette Toilette Navigator -</string>
+    <string name="activity_current_position">Nette Toilette Navigator - Mein Standort</string>
+    <string name="activity_help">Nette Toilette Navigator - Hilfe</string>
     
     <string name="open_image">OpenImage</string>
     <string name="image_marker">Marker</string>

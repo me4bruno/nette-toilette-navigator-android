@@ -9,8 +9,11 @@ public class RestroomData {
 	private static final Random RANDOM = new Random(1234);
 	private static final NumberFormat KM_FORMATTER = createKilometerFormatter();
 
-	private static final String[] TOILET_IMAGES = new String[] {
+	public static final String[] TOILET_IMAGES = new String[] {
 		"toilets_green", "toilets_red", "toilets_yellow" };
+
+	public static final String[] TOILET_NAMES = new String[] {
+		"Nette Toilette ist gešffnet", "Nette Toilette ist geschlossen", "Keine …ffnungszeiten vorhanden" };
 	
 	public static final int TOILET_OPEN = 0;
 	public static final int TOILET_CLOSE = 1;

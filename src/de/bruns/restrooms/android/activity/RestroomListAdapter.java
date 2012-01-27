@@ -9,15 +9,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Filter;
-import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 import de.bruns.restrooms.android.R;
 import de.bruns.restrooms.android.data.RestroomData;
 import de.bruns.restrooms.android.service.RestroomDataService;
 
-public class RestroomListAdapter extends BaseAdapter implements Filterable {
+public class RestroomListAdapter extends BaseAdapter {
 
 	protected static final String LOG_TAG = RestroomListAdapter.class
 			.getSimpleName();
@@ -62,11 +60,6 @@ public class RestroomListAdapter extends BaseAdapter implements Filterable {
 				+ restroomData.getAdresse());
 
 		return convertView;
-	}
-
-	@Override
-	public Filter getFilter() {
-		return null;
 	}
 
 	@Override

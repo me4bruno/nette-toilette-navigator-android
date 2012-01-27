@@ -44,7 +44,7 @@ public class ShowRestroomsListActivity extends ListActivity {
 		buttonHelp.setOnTouchListener(new OnTouchListener() {
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
-				Log.v(LOG_TAG, "Help button pressed");
+				startActivity(new Intent(ShowRestroomsListActivity.this, ShowHelpActivity.class));
 				return true;
 			}
 		});

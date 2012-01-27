@@ -73,7 +73,7 @@ public class ShowRestroomsMapActivity extends MapActivity {
 		buttonHelp.setOnTouchListener(new OnTouchListener() {
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
-				Log.v(LOG_TAG, "Help button pressed");
+				startActivity(new Intent(ShowRestroomsMapActivity.this, ShowHelpActivity.class));
 				return true;
 			}
 		});
