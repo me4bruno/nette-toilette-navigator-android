@@ -26,12 +26,13 @@ import de.bruns.restrooms.android.service.RestroomDataService;
 
 public class ShowRestroomsMapActivity extends MapActivity {
 
+	// FIXME - show current position
+
 	private static final String LOG_TAG = ShowRestroomDataActivity.class
 			.getSimpleName();
 	
 	private MapView mMapView;
 	private MapController mMapController;
-
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {

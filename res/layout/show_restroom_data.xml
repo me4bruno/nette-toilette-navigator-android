@@ -38,7 +38,8 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" 
             android:layout_below="@+id/txt_openinghours_header" 
-            android:minLines="1"
+            android:layout_marginBottom="10dp"
+            android:minLines="3"
 			android:paddingLeft="5dp"/>
     
     <com.google.android.maps.MapView

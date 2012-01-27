@@ -29,20 +29,18 @@ public class RestroomDataService {
 	
 	private RestroomDataService(Context context) {
 		currentPositionService = CurrentPositionService.instance(context);
+		currentLoaction = new Location((String) null);
 		
 		RestroomDataProvider restroomDataProvider = new RestroomDataProvider();
 		restrooms = restroomDataProvider.getRestroomData();
-		
-		Location initialLocation = new Location((String) null);
-		initialLocation.setLatitude(currentPositionService.getCurrentLatitude());
-		initialLocation.setLongitude(currentPositionService.getCurrentLongitude());
-		
-		this.currentLoaction = initialLocation;
 		
 		calculateDistances();
 	}
 
 	public void calculateDistances() {
+		currentLoaction.setLatitude(currentPositionService.getCurrentLatitude());
+		currentLoaction.setLongitude(currentPositionService.getCurrentLongitude());
+		
 		Location locationRestroom = new Location((String) null);
 		for (RestroomData restroomData : restrooms) {
 			locationRestroom.setLatitude(restroomData.getLatitude());

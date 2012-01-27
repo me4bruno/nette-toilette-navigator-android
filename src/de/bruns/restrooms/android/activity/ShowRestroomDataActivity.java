@@ -27,13 +27,12 @@ import de.bruns.restrooms.android.service.RestroomDataService;
 
 public class ShowRestroomDataActivity extends MapActivity {
 
-	
 	private static final String LOG_TAG = ShowRestroomDataActivity.class
 			.getSimpleName();
 
 	private static final String LINE_SEPERATOR = "\n";
 	public static final String RESTROOM_ID = "RESTROOM_ID";
-
+ 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

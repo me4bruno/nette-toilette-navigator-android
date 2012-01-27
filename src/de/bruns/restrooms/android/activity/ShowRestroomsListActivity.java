@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import de.bruns.restrooms.android.R;
 import de.bruns.restrooms.android.data.RestroomData;
+import de.bruns.restrooms.android.service.RestroomDataService;
 
 public class ShowRestroomsListActivity extends ListActivity {
 
@@ -20,7 +21,11 @@ public class ShowRestroomsListActivity extends ListActivity {
 	public void onCreate(Bundle icicle) {
 		super.onCreate(icicle);
 	    setContentView(R.layout.select_restrooms_list);
-		RestroomListAdapter adapter = new RestroomListAdapter(this);
+	    
+		RestroomDataService restroomDataService = RestroomDataService.instance(this);
+		restroomDataService.calculateDistances();
+		
+		RestroomListAdapter adapter = new RestroomListAdapter(this, restroomDataService.getRestrooms());
 		setListAdapter(adapter);
 		
 		// buttons

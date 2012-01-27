@@ -33,6 +33,10 @@ import de.bruns.restrooms.android.service.CurrentPositionService.CurrentPosition
 
 public class SelectCurrentPositionActivity extends MapActivity {
 
+	// FIXME - remove radio button selection from xml, use service configuration
+	// FIXME - show address in text field, remove toast
+	// FIXME - recalculated distance, when closing activity
+	
 	private static final String LOG_TAG = SelectCurrentPositionActivity.class
 			.getSimpleName();
 

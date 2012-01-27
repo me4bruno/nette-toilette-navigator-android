@@ -20,7 +20,7 @@ public class RestroomDataProvider {
 					"Nette_Toilette_Bremen.kml").openStream();
 			KmlRestroomParser kmlParser = new KmlRestroomParser(stream);
 			kmlParser.parse();
-			result = kmlParser.getWayPoints();
+			result = kmlParser.getRestroomData();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

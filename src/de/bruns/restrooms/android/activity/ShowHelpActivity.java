@@ -21,6 +21,8 @@ import de.bruns.restrooms.android.data.RestroomData;
 
 public class ShowHelpActivity extends ListActivity {
 
+	// FIXME - add about data
+
 	public void onCreate(Bundle icicle) {
 		super.onCreate(icicle);
 	    setContentView(R.layout.show_help);

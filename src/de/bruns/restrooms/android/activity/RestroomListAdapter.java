@@ -13,21 +13,20 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import de.bruns.restrooms.android.R;
 import de.bruns.restrooms.android.data.RestroomData;
-import de.bruns.restrooms.android.service.RestroomDataService;
 
 public class RestroomListAdapter extends BaseAdapter {
 
 	protected static final String LOG_TAG = RestroomListAdapter.class
 			.getSimpleName();
 
-	private List<RestroomData> allRestroomData;
+	private List<RestroomData> sortedRestroomData;
 	private LayoutInflater inflater;
 	private Context context;
 
-	public RestroomListAdapter(Context context) {
+	public RestroomListAdapter(Context context, List<RestroomData> sortedRestroomData) {
 		this.inflater = LayoutInflater.from(context);
 		this.context = context;
-		allRestroomData = RestroomDataService.instance(context).getRestrooms();
+		this.sortedRestroomData = sortedRestroomData;
 	}
 
 	public View getView(final int position, View convertView, ViewGroup parent) {
@@ -47,7 +46,7 @@ public class RestroomListAdapter extends BaseAdapter {
 			holder = (ViewHolder) convertView.getTag();
 		}
 
-		RestroomData restroomData = allRestroomData.get(position);
+		RestroomData restroomData = sortedRestroomData.get(position);
 
 		String filename = restroomData.getOpenImageFilename();
 		int id = context.getResources().getIdentifier(filename, "drawable",
@@ -69,12 +68,12 @@ public class RestroomListAdapter extends BaseAdapter {
 
 	@Override
 	public int getCount() {
-		return allRestroomData.size();
+		return sortedRestroomData.size();
 	}
 
 	@Override
 	public Object getItem(int position) {
-		return allRestroomData.get(position);
+		return sortedRestroomData.get(position);
 	}
 	
 	private class ViewHolder {

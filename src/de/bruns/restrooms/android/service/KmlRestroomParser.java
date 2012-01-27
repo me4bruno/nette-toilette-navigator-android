@@ -18,7 +18,6 @@ package de.bruns.restrooms.android.service;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -168,7 +167,7 @@ public class KmlRestroomParser {
 			}
 		}
 
-		List<RestroomData> getWayPoints() {
+		List<RestroomData> getRestroomData() {
 				return allToilletteData;
 		}
 
@@ -177,25 +176,10 @@ public class KmlRestroomParser {
 		}
 	}
 
-	/**
-	 * Creates a new GPX parser for a file specified by its full path.
-	 * 
-	 * @param fileName
-	 *            The full path of the GPX file to parse.
-	 */
 	public KmlRestroomParser(InputStream inputStream) {
 		this.inputSource = new InputSource(inputStream);
 	}
 
-	public KmlRestroomParser(Reader reader) {
-		this.inputSource = new InputSource(reader);
-	}
-
-	/**
-	 * Parses the GPX file.
-	 * 
-	 * @return <code>true</code> if success.
-	 */
 	public boolean parse() {
 		try {
 			SAXParser parser = sParserFactory.newSAXParser();
@@ -214,11 +198,7 @@ public class KmlRestroomParser {
 		return false;
 	}
 
-	/**
-	 * Returns the parsed {@link RestroomData} objects, or <code>null</code> if
-	 * none were found (or if the parsing failed.
-	 */
-	public List<RestroomData> getWayPoints() {
-		return mHandler.getWayPoints();
+	public List<RestroomData> getRestroomData() {
+		return mHandler.getRestroomData();
 	}
 }
