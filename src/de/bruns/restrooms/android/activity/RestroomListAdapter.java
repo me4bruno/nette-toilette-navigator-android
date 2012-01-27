@@ -34,7 +34,7 @@ public class RestroomListAdapter extends BaseAdapter {
 		ViewHolder holder = null;
 
 		if (convertView == null) {
-			convertView = inflater.inflate(R.layout.show_restrooms_list_item, null);
+			convertView = inflater.inflate(R.layout.select_restrooms_list_item, null);
 			holder = new ViewHolder();
 			holder.textName = (TextView) convertView
 					.findViewById(R.id.textName);

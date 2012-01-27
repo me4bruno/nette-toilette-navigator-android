@@ -27,9 +27,11 @@ import de.bruns.restrooms.android.service.RestroomDataService;
 
 public class ShowRestroomDataActivity extends MapActivity {
 
+	
 	private static final String LOG_TAG = ShowRestroomDataActivity.class
 			.getSimpleName();
 
+	private static final String LINE_SEPERATOR = "\n";
 	public static final String RESTROOM_ID = "RESTROOM_ID";
 
 	@Override
@@ -48,18 +50,17 @@ public class ShowRestroomDataActivity extends MapActivity {
 
 		RestroomData restroom = restroomDataService
 				.getRestroomForName(restroomId);
-		((TextView) findViewById(R.id.txt_name)).setText(restroom.getName());
-		((TextView) findViewById(R.id.txt_address)).setText(restroom
-				.getAdresse());
-		((TextView) findViewById(R.id.txt_openinghours)).setText(restroom
-				.getOpeningHours());
-		((TextView) findViewById(R.id.txt_position)).setText(restroom
-				.getLatitude() + " / " + restroom.getLongitude());
-		((TextView) findViewById(R.id.txt_description)).setText(restroom
-				.getDescription());
-		((TextView) findViewById(R.id.txt_distance)).setText(restroom
-				.getDistanceAsString());
-
+		
+		String addressContent = 
+				restroom.getName() + LINE_SEPERATOR + //
+				restroom.getDistanceAsString() + " - " +restroom.getAdresse() + LINE_SEPERATOR + //
+				restroom.getLatitude() + " / " + restroom.getLongitude();
+		((TextView) findViewById(R.id.txt_address)).setText(addressContent);
+		
+		String openingHoursContent = restroom
+				.getOpeningHours().replace(", ", LINE_SEPERATOR).replace(",", LINE_SEPERATOR);
+		((TextView) findViewById(R.id.txt_openinghours)).setText(openingHoursContent);
+		
 		final GeoPoint restroomLocation = ShowRestroomsMapActivity.getGeoPoint(restroom);
 
 		// map view
