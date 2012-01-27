@@ -1,6 +1,7 @@
 package de.bruns.restrooms.android.data;
 
 import java.text.NumberFormat;
+import java.util.Date;
 import java.util.Locale;
 import java.util.Random;
 
@@ -29,6 +30,7 @@ public class RestroomData {
 	private String address;
 	private int isOpen;
 	private String filename;
+	private OpeningHoursData openingHoursData;
 
 	public RestroomData() {
 		isOpen = RANDOM.nextInt(3);
@@ -121,8 +123,14 @@ public class RestroomData {
 						+ description);
 			}
 		}
+		
+		openingHoursData = new OpeningHoursData(openingHours);
 	}
 
+	public boolean isOpen(Date currentTime) {
+		return openingHoursData.isOpen(currentTime);
+	}
+	
 	public String getDescription() {
 		return description;
 	}

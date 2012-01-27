@@ -9,6 +9,7 @@ public class OpeningHoursData {
 
 	private static String OPEN_CHARACTER = "Y";
 	private static String CLOSE_CHARACTER = "N";
+	private static String UNKNOWN_CHARACTER = "U";
 
 	private static Map<String, Integer> WEEKDAYS = new HashMap<String, Integer>();
 	static {
