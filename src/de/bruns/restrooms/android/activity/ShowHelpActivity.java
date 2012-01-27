@@ -21,8 +21,6 @@ import de.bruns.restrooms.android.data.RestroomData;
 
 public class ShowHelpActivity extends ListActivity {
 
-	private static final String LOG_TAG = ShowHelpActivity.class.getSimpleName();
-	
 	public void onCreate(Bundle icicle) {
 		super.onCreate(icicle);
 	    setContentView(R.layout.show_help);
@@ -73,6 +71,16 @@ public class ShowHelpActivity extends ListActivity {
 			textView.setText(RestroomData.TOILET_NAMES[position]);
 			
 			return rowView;
+		}
+		
+		@Override
+		public boolean areAllItemsEnabled() {
+			return false;
+		}
+
+		@Override
+		public boolean isEnabled(int position) {
+			return false;
 		}
 	}
 
