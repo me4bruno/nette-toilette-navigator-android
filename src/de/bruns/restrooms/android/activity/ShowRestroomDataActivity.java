@@ -102,7 +102,7 @@ public class ShowRestroomDataActivity extends MapActivity {
 				Configuration.getCurrentPosition(), "Mein Standort");
 		mapView.getOverlays().add(myPositionOverlay);
 		
-		// buttons
+		// buttons apps
 		Button buttonStreetview = (Button) findViewById(R.id.button_streetview);
 		buttonStreetview.setOnTouchListener(new OnTouchListener() {
 			@Override
@@ -127,6 +127,24 @@ public class ShowRestroomDataActivity extends MapActivity {
 			public boolean onTouch(View v, MotionEvent event) {
 				Intent intent = IntentFactory.createMapsIntent(Configuration.getCurrentPosition(), restroomLocation);
 				startActivity(intent);
+				return true;
+			}
+		});
+		
+		// buttons back
+		Button buttonAsList = (Button) findViewById(R.id.button_aslist);
+		buttonAsList.setOnTouchListener(new OnTouchListener() {
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				startActivity(new Intent(ShowRestroomDataActivity.this, ShowRestroomsListActivity.class));
+				return true;
+			}
+		});
+		Button buttonAsMap = (Button) findViewById(R.id.button_asmap);
+		buttonAsMap.setOnTouchListener(new OnTouchListener() {
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				startActivity(new Intent(ShowRestroomDataActivity.this, ShowRestroomsMapActivity.class));
 				return true;
 			}
 		});

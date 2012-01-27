@@ -1,28 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical" >
+<RelativeLayout 
+  	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="fill_parent" 
+	android:layout_width="fill_parent">
 
         <TextView
+            android:id="@+id/txt_address_header"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="#ffff7700"
 			android:textColor="#ff000000"
 			android:textStyle="bold"
-			android:paddingLeft="5dp"    
+			android:paddingLeft="5dp"
+            android:layout_alignParentTop="true"
             android:text="@string/restroom_address" />
         <TextView
             android:id="@+id/txt_address"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" 
+            android:layout_below="@+id/txt_address_header" 
             android:minLines="3"
             android:maxLines="3"
 			android:paddingLeft="5dp"/>
 
         <TextView
+            android:id="@+id/txt_openinghours_header"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_address" 
             android:background="#ffff7700"
 			android:textColor="#ff000000"
 			android:textStyle="bold"
@@ -32,42 +37,72 @@
             android:id="@+id/txt_openinghours"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" 
+            android:layout_below="@+id/txt_openinghours_header" 
             android:minLines="1"
 			android:paddingLeft="5dp"/>
     
-        <com.google.android.maps.MapView
-	        android:id="@+id/map_restroom_location"
-	        android:layout_width="fill_parent"
-	        android:layout_height="fill_parent"
-	        android:apiKey="0Q8bs9LEx6q3hQmJxS-EOouZSKlYsv7TEw00Dlg"
-	        android:clickable="true" />
-
-        
-   <LinearLayout
-        android:id="@+id/linearLayout1"
+    <com.google.android.maps.MapView
+     	android:id="@+id/map_restroom_location"
+     	android:layout_width="fill_parent"
+     	android:layout_height="fill_parent"
+     	android:apiKey="0Q8bs9LEx6q3hQmJxS-EOouZSKlYsv7TEw00Dlg"
+        android:layout_marginBottom="10dip"
+        android:layout_below="@+id/txt_openinghours" 
+        android:layout_above="@+id/layout_buttons_apps" 
+     	android:clickable="true" />
+ 
+	<LinearLayout
+        android:id="@+id/layout_buttons_apps" 
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content" 
+        android:layout_above="@+id/layout_buttons_back" 
+		android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/button_streetview"
-        android:layout_width="0px"
-	    android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:text="@string/button_streetview" />
-
-    <Button
-        android:id="@+id/button_navigation"
-        android:layout_width="0px"
-	    android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:text="@string/button_navigation" />
-
-    <Button
-        android:id="@+id/button_maps"
-        android:layout_width="0px"
-	    android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:text="@string/button_maps" />
+	    <Button
+	        android:id="@+id/button_streetview"
+	        android:layout_width="0px"
+		    android:layout_weight="1"
+	        android:layout_height="wrap_content"
+	        android:text="@string/button_streetview" />
+	
+	    <Button
+	        android:id="@+id/button_navigation"
+	        android:layout_width="0px"
+		    android:layout_weight="1"
+	        android:layout_height="wrap_content"
+	        android:text="@string/button_navigation" />
+	
+	    <Button
+	        android:id="@+id/button_maps"
+	        android:layout_width="0px"
+		    android:layout_weight="1"
+	        android:layout_height="wrap_content"
+	        android:text="@string/button_maps" />
     </LinearLayout>
-        
-</LinearLayout>
+ 
+	<LinearLayout
+        android:id="@+id/layout_buttons_back" 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" 
+        android:layout_alignParentBottom="true"
+		android:orientation="horizontal"
+     >
+	    
+	<Button
+        android:id="@+id/button_aslist"
+        android:layout_width="0px"
+	    android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:text="@string/button_aslist" 
+    	/>
+
+    <Button
+        android:id="@+id/button_asmap"
+        android:layout_width="0px"
+	    android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:text="@string/button_asmap" 
+        />
+
+	</LinearLayout> 	
+</RelativeLayout>
