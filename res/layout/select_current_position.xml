@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout 
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" 
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
 
-    <RadioGroup
+      <RadioGroup
         android:id="@+id/rg_position"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -25,33 +26,27 @@
             android:text="@string/position_gps" />
 
    		 </RadioGroup>
-    
+
+        	
     <TextView
 	    	android:id="@+id/text_position_description" 
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
 			android:layout_below="@+id/rg_position" 
+			android:layout_marginBottom="10dip"
             />
-        
-    <LinearLayout
-        android:id="@+id/layout_map" 
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent" 
-		android:layout_below="@+id/text_position_description" 
-		android:layout_above="@+id/layout_buttons" 
-		android:layout_marginTop="10dip"
-		android:layout_marginBottom="10dip"
-     >
-        
+    
     <com.google.android.maps.MapView
-     	android:id="@+id/select_current_position_map"
-     	android:layout_width="wrap_content"
-		android:layout_height="wrap_content" 
-     	android:apiKey="0Q8bs9LEx6q3hQmJxS-EOouZSKlYsv7TEw00Dlg"
-     	android:clickable="true" />
-        
-    </LinearLayout>
-        
+        		 android:id="@+id/select_current_position_map"
+                 android:layout_width="fill_parent"
+                 android:layout_height="wrap_content"
+                 android:clickable="true"
+                 android:layout_marginBottom="10dip"
+                 android:layout_below="@+id/text_position_description" 
+                 android:layout_above="@+id/layout_buttons" 
+                 android:apiKey="0Q8bs9LEx6q3hQmJxS-EOouZSKlYsv7TEw00Dlg"
+                 />
+    
   	<ImageView android:id="@+id/drag"
     	android:layout_width="wrap_content"
     	android:layout_height="wrap_content"
@@ -59,7 +54,8 @@
     	android:visibility="gone"
     	android:contentDescription="@string/image_marker"
   	/>      
-  	
+        
+        
 	<LinearLayout
         android:id="@+id/layout_buttons" 
         android:layout_width="fill_parent"
@@ -84,6 +80,7 @@
         android:text="@string/button_asmap" 
         />
 
-	</LinearLayout>
-	
+	</LinearLayout>  	
+  	
+  	
 </RelativeLayout>

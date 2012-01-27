@@ -16,28 +16,20 @@
         
         <uses-library android:name="com.google.android.maps"/>
         
-        <activity android:name=".activity.ShowRestroomsListActivity" android:label="Bruno - Liste Toiletten">
+        <activity android:name=".activity.ShowRestroomsListActivity" android:label="@string/activity_restrooms_list">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         
-        <activity android:name=".activity.ShowRestroomDataActivity">
+        <activity android:name=".activity.ShowRestroomDataActivity" android:label="@string/activity_restroom_data">
         </activity>
                 
-        <activity android:name=".activity.ShowRestroomsMapActivity" android:label="Bruno - Karte Toiletten">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <activity android:name=".activity.ShowRestroomsMapActivity" android:label="@string/activity_restrooms_map">
         </activity>
 
-        <activity android:name=".activity.SelectCurrentPositionActivity" android:label="Bruno - Mein Standort">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <activity android:name=".activity.SelectCurrentPositionActivity" android:label="@string/activity_current_position">
         </activity>
         
     </application>

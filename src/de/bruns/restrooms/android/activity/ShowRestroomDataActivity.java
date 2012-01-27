@@ -43,7 +43,7 @@ public class ShowRestroomDataActivity extends MapActivity {
 
 		String restroomId = extras
 				.getString(ShowRestroomDataActivity.RESTROOM_ID);
-		setTitle("Toilette: " + restroomId);
+		setTitle(getTitle() + " " + restroomId);
 		Log.v(LOG_TAG, "Selected restroom: " + restroomId);
 
 		RestroomData restroom = restroomDataService

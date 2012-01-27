@@ -3,6 +3,12 @@
 
     <string name="app_name">Nette Toilette Navigator</string>
     <string name="app_image">AppImage</string>
+
+    <string name="activity_restrooms_list">Nette Toilette Navigator - Liste</string>
+    <string name="activity_restrooms_map">Nette Toilette Navigator - Karte</string>
+    <string name="activity_restroom_data">Nette Toilette Navigator - </string>
+    <string name="activity_current_position">Nette Toilette Navigator -</string>
+    
     <string name="open_image">OpenImage</string>
     <string name="image_marker">Marker</string>
     <string name="restroom_name">Name</string>
@@ -20,6 +26,8 @@
     <string name="button_position">Standort</string>
     <string name="button_help">Hilfe</string>
     <string name="position_manual">Standort manuell setzen</string>
+    <string name="position_description_gps">Nutze GPS-Standort (Marker nicht verschiebbar)</string>
     <string name="position_gps">GPS-Standort verwenden</string>
+    <string name="position_description_manual">Verschiebe Marker auf aktuellen Standort</string>
     
 </resources>

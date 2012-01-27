@@ -37,9 +37,6 @@ import de.bruns.restrooms.android.service.CurrentPositionService.CurrentPosition
 
 public class SelectCurrentPositionActivity extends MapActivity {
 
-	private static final String POS_DESC_GPS = "Nutze GPS-Standort (Marker nicht verschiebbar)";
-	private static final String POS_DESC_MANUAL = "Verschiebe Marker auf momentanen Standort";
-
 	private static final String LOG_TAG = SelectCurrentPositionActivity.class
 			.getSimpleName();
 
@@ -52,13 +49,20 @@ public class SelectCurrentPositionActivity extends MapActivity {
 	private RadioGroup radioGroup;
 	private TextView positionDescription;
 
+	private String position_description_manual;
+	private String position_description_gps;
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		position_description_gps = getResources().getString(R.string.position_description_gps);
+		position_description_manual = getResources().getString(R.string.position_description_manual);
+		
 		setContentView(R.layout.select_current_position);
 
 		positionDescription = (TextView) findViewById(R.id.text_position_description);
-		positionDescription.setText(POS_DESC_MANUAL);
+		positionDescription.setText(position_description_manual);
 
 		radioGroup = (RadioGroup) findViewById(R.id.rg_position);
 		radioGroup.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -67,12 +71,12 @@ public class SelectCurrentPositionActivity extends MapActivity {
 			public void onCheckedChanged(RadioGroup group, int checkedId) {
 				switch (radioGroup.getCheckedRadioButtonId()) {
 				case R.id.rb_position_gps:
-					positionDescription.setText(POS_DESC_GPS);
+					positionDescription.setText(position_description_gps);
 					currentPositionService.useGpsPosition();
 					Log.v(LOG_TAG, "Use GPS position");					
 					break;
 				case R.id.rb_position_manual:
-					positionDescription.setText(POS_DESC_MANUAL);
+					positionDescription.setText(position_description_manual);
 					GeoPoint manualPosition = currentPositionService.getCurrentPosition();
 					currentPositionService.useManualPosition(manualPosition);
 					Log.v(LOG_TAG, "Use manuell position");
@@ -123,7 +127,7 @@ public class SelectCurrentPositionActivity extends MapActivity {
 		
 		myPositionManualOverlay = new MyPositionManualOverlay(marker);
 		mapView.getOverlays().add(myPositionManualOverlay);
-
+		
 		mapView.invalidate();
 		
 		// buttons
@@ -206,13 +210,12 @@ public class SelectCurrentPositionActivity extends MapActivity {
 				final int action = event.getAction();
 				final int x = (int) event.getX();
 				final int y = (int) event.getY();
-				
+
 				if (action == MotionEvent.ACTION_DOWN) {
 					for (OverlayItem item : items) {
 						Point p = new Point(0, 0);
-						
+
 						mapView.getProjection().toPixels(item.getPoint(), p);
-						
 						if (hitTest(item, marker, x - p.x, y - p.y)) {
 							result = true;
 							inDrag = item;
@@ -222,7 +225,7 @@ public class SelectCurrentPositionActivity extends MapActivity {
 							xDragTouchOffset = 0;
 							yDragTouchOffset = 0;
 							
-							setDragImagePosition(p.x, p.y);
+							setDragImagePosition(p.x + mapView.getLeft(), p.y  + mapView.getTop());
 							dragImage.setVisibility(View.VISIBLE);
 							
 							xDragTouchOffset = x - p.x;
@@ -232,7 +235,7 @@ public class SelectCurrentPositionActivity extends MapActivity {
 						}
 					}
 				} else if (action == MotionEvent.ACTION_MOVE && inDrag != null) {
-					setDragImagePosition(x, y);
+					setDragImagePosition(x + mapView.getLeft(), y  + mapView.getTop());
 					result = true;
 				} else if (action == MotionEvent.ACTION_UP && inDrag != null) {
 					dragImage.setVisibility(View.GONE);
