@@ -19,10 +19,10 @@ import com.google.android.maps.MapController;
 import com.google.android.maps.MapView;
 import com.google.android.maps.OverlayItem;
 
-import de.bruns.restrooms.android.Configuration;
 import de.bruns.restrooms.android.IntentFactory;
 import de.bruns.restrooms.android.R;
 import de.bruns.restrooms.android.data.RestroomData;
+import de.bruns.restrooms.android.service.CurrentPositionService;
 import de.bruns.restrooms.android.service.RestroomDataService;
 
 public class ShowRestroomDataActivity extends MapActivity {
@@ -38,8 +38,8 @@ public class ShowRestroomDataActivity extends MapActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		RestroomDataService restroomDataService = RestroomDataService.INSTANCE;
-
+		final GeoPoint currentPosition = CurrentPositionService.instance(this).getCurrentPosition();;
+		
 		setContentView(R.layout.show_restroom_data);
 		final Bundle extras = getIntent().getExtras();
 
@@ -48,7 +48,7 @@ public class ShowRestroomDataActivity extends MapActivity {
 		setTitle(getTitle() + " " + restroomId);
 		Log.v(LOG_TAG, "Selected restroom: " + restroomId);
 
-		RestroomData restroom = restroomDataService
+		RestroomData restroom = RestroomDataService.instance(this)
 				.getRestroomForName(restroomId);
 		
 		String addressContent = 
@@ -98,8 +98,7 @@ public class ShowRestroomDataActivity extends MapActivity {
 
 		// my location overlay
 		SingleItemOverlay myPositionOverlay = new SingleItemOverlay(this, this
-				.getResources().getDrawable(R.drawable.marker),
-				Configuration.getCurrentPosition(), "Mein Standort");
+				.getResources().getDrawable(R.drawable.marker),currentPosition, "Mein Standort");
 		mapView.getOverlays().add(myPositionOverlay);
 		
 		// buttons apps
@@ -125,7 +124,7 @@ public class ShowRestroomDataActivity extends MapActivity {
 		buttonMaps.setOnTouchListener(new OnTouchListener() {
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
-				Intent intent = IntentFactory.createMapsIntent(Configuration.getCurrentPosition(), restroomLocation);
+				Intent intent = IntentFactory.createMapsIntent(currentPosition, restroomLocation);
 				startActivity(intent);
 				return true;
 			}

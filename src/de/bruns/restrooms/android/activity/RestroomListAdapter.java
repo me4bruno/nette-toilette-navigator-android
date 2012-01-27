@@ -27,7 +27,7 @@ public class RestroomListAdapter extends BaseAdapter {
 	public RestroomListAdapter(Context context) {
 		this.inflater = LayoutInflater.from(context);
 		this.context = context;
-		allRestroomData = RestroomDataService.INSTANCE.getRestrooms();
+		allRestroomData = RestroomDataService.instance(context).getRestrooms();
 	}
 
 	public View getView(final int position, View convertView, ViewGroup parent) {

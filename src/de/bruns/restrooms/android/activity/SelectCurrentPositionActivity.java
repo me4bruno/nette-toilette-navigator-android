@@ -2,24 +2,20 @@ package de.bruns.restrooms.android.activity;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Point;
 import android.graphics.drawable.Drawable;
-import android.location.Geocoder;
-import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
-import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -55,6 +51,8 @@ public class SelectCurrentPositionActivity extends MapActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		currentPositionService = CurrentPositionService.instance(this);
 		
 		position_description_gps = getResources().getString(R.string.position_description_gps);
 		position_description_manual = getResources().getString(R.string.position_description_manual);
@@ -93,11 +91,6 @@ public class SelectCurrentPositionActivity extends MapActivity {
 		mapView.setBuiltInZoomControls(true);
 
 		// current position service
-		LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-		Geocoder geocoder = new Geocoder(this, Locale.getDefault());
-
-		currentPositionService = new CurrentPositionService(locationManager,
-				geocoder);
 		currentPositionService
 				.addCurrentPositionListener(new CurrentPositionListener() {
 					@Override

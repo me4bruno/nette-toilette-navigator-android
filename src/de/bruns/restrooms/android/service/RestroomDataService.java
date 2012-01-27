@@ -4,8 +4,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+import android.content.Context;
 import android.location.Location;
-import de.bruns.restrooms.android.Configuration;
 import de.bruns.restrooms.android.data.RestroomData;
 
 /**
@@ -13,29 +13,36 @@ import de.bruns.restrooms.android.data.RestroomData;
  */
 public class RestroomDataService {
 
-	public static final RestroomDataService INSTANCE = new RestroomDataService();
+	private static RestroomDataService instance;
 
 	private List<RestroomData> restrooms;
 	private Location currentLoaction;
 
-	private RestroomDataService() {
+	private CurrentPositionService currentPositionService;
+	
+	public static RestroomDataService instance(Context context) {
+		if (instance == null) {
+			instance = new RestroomDataService(context);
+		}
+		return instance;
+	}
+	
+	private RestroomDataService(Context context) {
+		currentPositionService = CurrentPositionService.instance(context);
+		
 		RestroomDataProvider restroomDataProvider = new RestroomDataProvider();
 		restrooms = restroomDataProvider.getRestroomData();
 		
 		Location initialLocation = new Location((String) null);
-		initialLocation.setLatitude(Configuration.getCurrentLatitude());
-		initialLocation.setLongitude(Configuration.getCurrentLongitude());
+		initialLocation.setLatitude(currentPositionService.getCurrentLatitude());
+		initialLocation.setLongitude(currentPositionService.getCurrentLongitude());
 		
-		updateLocation(initialLocation);
-	}
-
-	public void updateLocation(Location currentLoaction) {
-		this.currentLoaction = currentLoaction;
-
+		this.currentLoaction = initialLocation;
+		
 		calculateDistances();
 	}
 
-	private void calculateDistances() {
+	public void calculateDistances() {
 		Location locationRestroom = new Location((String) null);
 		for (RestroomData restroomData : restrooms) {
 			locationRestroom.setLatitude(restroomData.getLatitude());

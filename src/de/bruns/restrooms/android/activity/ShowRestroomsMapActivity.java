@@ -20,8 +20,8 @@ import com.google.android.maps.MapView;
 import com.google.android.maps.OverlayItem;
 
 import de.bruns.restrooms.android.R;
-import de.bruns.restrooms.android.Configuration;
 import de.bruns.restrooms.android.data.RestroomData;
+import de.bruns.restrooms.android.service.CurrentPositionService;
 import de.bruns.restrooms.android.service.RestroomDataService;
 
 public class ShowRestroomsMapActivity extends MapActivity {
@@ -31,6 +31,7 @@ public class ShowRestroomsMapActivity extends MapActivity {
 	
 	private MapView mMapView;
 	private MapController mMapController;
+
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -46,7 +47,7 @@ public class ShowRestroomsMapActivity extends MapActivity {
 
 		mMapView.setBuiltInZoomControls(true); 
 
-		mMapController.animateTo(Configuration.getCurrentPosition());
+		mMapController.animateTo(CurrentPositionService.instance(this).getCurrentPosition());
 
 		// overlay
 		RestroomItemizedOverlay restroomOverlay = new RestroomItemizedOverlay(this);
@@ -91,7 +92,7 @@ public class ShowRestroomsMapActivity extends MapActivity {
 		public RestroomItemizedOverlay(Context context) {
 			super(boundCenterBottom(context.getResources().getDrawable(R.drawable.toilets_green)));
 
-			for (RestroomData restroomData : RestroomDataService.INSTANCE.getRestrooms()) {
+			for (RestroomData restroomData : RestroomDataService.instance(context).getRestrooms()) {
 				overlayItems.add(new RestroomOverlayItem(restroomData));
 			}
 			populate();

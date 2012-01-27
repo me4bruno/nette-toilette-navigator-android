@@ -3,7 +3,9 @@ package de.bruns.restrooms.android.service;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
+import android.content.Context;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -24,6 +26,7 @@ public class CurrentPositionService {
 			.getSimpleName();
 	private static final GeoPoint GEO_POINT_BREMEN = new GeoPoint(
 			(int) (53.075813 * 1E6), (int) (8.807357 * 1E6));
+	private static CurrentPositionService instance;
 
 	private GeoPoint currentPosition;
 	private GeoPoint currentGpsPosition;
@@ -31,15 +34,23 @@ public class CurrentPositionService {
 
 	private List<CurrentPositionListener> currentPositionListeners;
 	private final Geocoder geocoder;
-
-	public CurrentPositionService(LocationManager locationManager,
-			Geocoder geocoder) {
+	
+	public static CurrentPositionService instance(Context context) {
+		if (instance == null) {
+			instance = new CurrentPositionService(context);
+		}
+		return instance;
+	}
+	
+	private CurrentPositionService(Context context) {
+		LocationManager locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
+		geocoder = new Geocoder(context, Locale.getDefault());
+		
 		currentPosition = GEO_POINT_BREMEN;
 		currentGpsPosition = GEO_POINT_BREMEN;
 		useGps = false;
 		currentPositionListeners = new ArrayList<CurrentPositionListener>();
 
-		this.geocoder = geocoder;
 		LocationListener locationListener = new MyLocationListener();
 		locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0,
 				0, locationListener);
@@ -47,8 +58,8 @@ public class CurrentPositionService {
 
 	public String getAddressOfPosition() {
 		String addressString = "No location found";
-		double lat = currentPosition.getLatitudeE6() / ((double) 1E6);
-		double lng = currentPosition.getLongitudeE6() / ((double) 1E6);
+		double lat = getCurrentLatitude();
+		double lng = getCurrentLongitude();
 
 		try {
 			List<Address> addresses = geocoder.getFromLocation(lat, lng, 1);
@@ -66,6 +77,14 @@ public class CurrentPositionService {
 		
 		Log.v(LOG_TAG, "Address of (" + lat + "," + lng + "): " + addressString);
 		return addressString;
+	}
+
+	public double getCurrentLongitude() {
+		return currentPosition.getLongitudeE6() / ((double) 1E6);
+	}
+
+	public double getCurrentLatitude() {
+		return currentPosition.getLatitudeE6() / ((double) 1E6);
 	}
 
 	public void useGpsPosition() {
