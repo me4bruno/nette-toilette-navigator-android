@@ -13,7 +13,9 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import de.bruns.restrooms.android.R;
+import de.bruns.restrooms.android.data.OpeningImageData;
 import de.bruns.restrooms.android.data.RestroomData;
+import de.bruns.restrooms.android.service.TimeService;
 
 public class RestroomListAdapter extends BaseAdapter {
 
@@ -48,9 +50,11 @@ public class RestroomListAdapter extends BaseAdapter {
 		}
 
 		RestroomData restroomData = sortedRestroomData.get(position);
-
-		String filename = RestroomData.TOILET_IMAGES[restroomData.isOpen(new Date())];
-		int id = context.getResources().getIdentifier(filename, "drawable",
+   
+		Date currentTime = TimeService.instance().getTime();
+		
+		OpeningImageData openingImageData = OpeningImageData.getOpeningImageData(restroomData.isOpen(currentTime));
+		int id = context.getResources().getIdentifier(openingImageData.getFilename(), "drawable",
 				context.getString(R.string.package_str));
 		Bitmap restroomIcon = BitmapFactory.decodeResource(context.getResources(), id);
 

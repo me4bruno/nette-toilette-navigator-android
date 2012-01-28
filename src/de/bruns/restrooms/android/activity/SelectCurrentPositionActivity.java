@@ -118,7 +118,7 @@ public class SelectCurrentPositionActivity extends MapActivity {
 					}
 				});
 
-		Drawable marker = getResources().getDrawable(R.drawable.marker);
+		Drawable marker = getResources().getDrawable(R.drawable.you_are_here);
 		marker.setBounds(0, 0, marker.getIntrinsicWidth(),
 				marker.getIntrinsicHeight());
 		

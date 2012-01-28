@@ -23,9 +23,11 @@ import com.google.android.maps.OverlayItem;
 
 import de.bruns.restrooms.android.IntentFactory;
 import de.bruns.restrooms.android.R;
+import de.bruns.restrooms.android.data.OpeningImageData;
 import de.bruns.restrooms.android.data.RestroomData;
 import de.bruns.restrooms.android.service.CurrentPositionService;
 import de.bruns.restrooms.android.service.RestroomDataService;
+import de.bruns.restrooms.android.service.TimeService;
 
 public class ShowRestroomDataActivity extends MapActivity {
 
@@ -74,34 +76,37 @@ public class ShowRestroomDataActivity extends MapActivity {
 		mapController.setZoom(zoom);
 		mapController.setCenter(restroomLocation);
 
+		Date currentTime = TimeService.instance().getTime();
+
 		// restroom location overlay
 		Drawable restroomLocationDrawable = null;
 		
-		int open = restroom.isOpen(new Date());
+		// FIXME - move codde into OpeningImageData
+		int open = restroom.isOpen(currentTime);
 		switch (open) {
-		case RestroomData.TOILET_OPEN:
+		case OpeningImageData.RESTROOM_OPEN:
 			restroomLocationDrawable = this.getResources().getDrawable(
-					R.drawable.toilets_green);
+					R.drawable.restroom_green);
 			break;
-		case RestroomData.TOILET_CLOSE:
+		case OpeningImageData.RESTROOM_CLOSE:
 			restroomLocationDrawable = this.getResources().getDrawable(
-					R.drawable.toilets_red);
+					R.drawable.restroom_red);
 			break;
-		case RestroomData.TOILET_UNCERTAIN:
+		case OpeningImageData.RESTROOM_UNCERTAIN:
 			restroomLocationDrawable = this.getResources().getDrawable(
-					R.drawable.toilets_yellow);
+					R.drawable.restroom_yellow);
 			break;
 		default:
-			throw new RuntimeException("Unknown isOpen image: "
-					+ restroom.isOpen(new Date()));
+			throw new RuntimeException("Unknown image: " + open);
 		}
+		
 		SingleItemOverlay restroomLocationOverlay = new SingleItemOverlay(this,
 				restroomLocationDrawable, restroomLocation, restroom.getName());
 		mapView.getOverlays().add(restroomLocationOverlay);
 
 		// my location overlay
 		SingleItemOverlay myPositionOverlay = new SingleItemOverlay(this, this
-				.getResources().getDrawable(R.drawable.marker),currentPosition, "Mein Standort");
+				.getResources().getDrawable(R.drawable.you_are_here),currentPosition, "Mein Standort");
 		mapView.getOverlays().add(myPositionOverlay);
 		
 		// buttons apps

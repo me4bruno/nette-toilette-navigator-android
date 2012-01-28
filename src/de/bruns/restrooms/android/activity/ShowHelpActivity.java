@@ -17,7 +17,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import de.bruns.restrooms.android.R;
-import de.bruns.restrooms.android.data.RestroomData;
+import de.bruns.restrooms.android.data.OpeningImageData;
 
 public class ShowHelpActivity extends ListActivity {
 
@@ -47,11 +47,11 @@ public class ShowHelpActivity extends ListActivity {
 		});
 	}
 
-	public class HelpListAdapter extends ArrayAdapter<String> {
+	public class HelpListAdapter extends ArrayAdapter<OpeningImageData> {
 		private final Context context;
 
 		public HelpListAdapter(Context context) {
-			super(context, R.layout.show_help_list_item, RestroomData.TOILET_NAMES);
+			super(context, R.layout.show_help_list_item, OpeningImageData.ALL_IMAGES);
 			this.context = context;
 		}
 
@@ -63,14 +63,14 @@ public class ShowHelpActivity extends ListActivity {
 			
 			ImageView iconOpen = (ImageView) rowView.findViewById(R.id.iconOpen);
 			
-			String filename = RestroomData.TOILET_IMAGES[position];
-			int id = context.getResources().getIdentifier(filename, "drawable",
+			OpeningImageData imageData = OpeningImageData.ALL_IMAGES[position];
+			int id = context.getResources().getIdentifier(imageData.getFilename(), "drawable",
 					context.getString(R.string.package_str));
 			Bitmap restroomIcon = BitmapFactory.decodeResource(context.getResources(), id);
 			iconOpen.setImageBitmap(restroomIcon);
 			
 			TextView textView = (TextView) rowView.findViewById(R.id.textName);
-			textView.setText(RestroomData.TOILET_NAMES[position]);
+			textView.setText(imageData.getDescription());
 			
 			return rowView;
 		}
@@ -85,5 +85,4 @@ public class ShowHelpActivity extends ListActivity {
 			return false;
 		}
 	}
-
 }

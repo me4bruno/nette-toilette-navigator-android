@@ -22,6 +22,9 @@ public class ShowRestroomsListActivity extends ListActivity {
 		super.onCreate(icicle);
 	    setContentView(R.layout.select_restrooms_list);
 	    
+	    // FIXME: remove this line...
+	    // TimeService.useTestTime();
+	    
 		RestroomDataService restroomDataService = RestroomDataService.instance(this);
 		restroomDataService.calculateDistances();
 		

@@ -8,16 +8,6 @@ public class RestroomData {
 
 	private static final NumberFormat KM_FORMATTER = createKilometerFormatter();
 
-	public static final String[] TOILET_IMAGES = new String[] {
-		"toilets_green", "toilets_red", "toilets_yellow" };
-
-	public static final String[] TOILET_NAMES = new String[] {
-		"Nette Toilette ist gešffnet", "Nette Toilette ist geschlossen", "Keine …ffnungszeiten vorhanden" };
-	
-	public static final int TOILET_OPEN = 0;
-	public static final int TOILET_CLOSE = 1;
-	public static final int TOILET_UNCERTAIN = 2;
-
 	private int distanceInMeter;
 	private double longitude;
 	private double latitude;
@@ -119,10 +109,10 @@ public class RestroomData {
 	}
 
 	public int isOpen(Date currentTime) {
-		int open = RestroomData.TOILET_UNCERTAIN;
+		int open = OpeningImageData.RESTROOM_UNCERTAIN;
 		try {
-			open = openingHoursData.isOpen(new Date()) ? RestroomData.TOILET_OPEN
-					: RestroomData.TOILET_CLOSE;
+			open = openingHoursData.isOpen(currentTime) ? OpeningImageData.RESTROOM_OPEN
+					: OpeningImageData.RESTROOM_CLOSE;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
