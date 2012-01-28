@@ -91,6 +91,8 @@ public class ShowRestroomsMapActivity extends MapActivity {
 		private List<RestroomOverlayItem> overlayItems = new ArrayList<RestroomOverlayItem>();
 
 		public RestroomItemizedOverlay(Context context) {
+			// FIXME replace image of the map
+			
 			super(boundCenterBottom(context.getResources().getDrawable(R.drawable.toilets_green)));
 
 			for (RestroomData restroomData : RestroomDataService.instance(context).getRestrooms()) {

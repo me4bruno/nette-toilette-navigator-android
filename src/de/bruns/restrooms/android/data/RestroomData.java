@@ -3,11 +3,9 @@ package de.bruns.restrooms.android.data;
 import java.text.NumberFormat;
 import java.util.Date;
 import java.util.Locale;
-import java.util.Random;
 
 public class RestroomData {
 
-	private static final Random RANDOM = new Random(1234);
 	private static final NumberFormat KM_FORMATTER = createKilometerFormatter();
 
 	public static final String[] TOILET_IMAGES = new String[] {
@@ -28,17 +26,10 @@ public class RestroomData {
 	private String nameOfDescription;
 	private String openingHours;
 	private String address;
-	private int isOpen;
-	private String filename;
 	private OpeningHoursData openingHoursData;
 
 	public RestroomData() {
-		isOpen = RANDOM.nextInt(3);
-		filename = TOILET_IMAGES[isOpen];
-	}
-
-	public String getOpenImageFilename() {
-		return filename;
+		openingHoursData = new OpeningHoursData();
 	}
 
 	public String getFullString() {
@@ -52,10 +43,6 @@ public class RestroomData {
 	@Override
 	public String toString() {
 		return name;
-	}
-
-	public int isOpen() {
-		return isOpen;
 	}
 
 	public void setName(String name) {
@@ -124,11 +111,22 @@ public class RestroomData {
 			}
 		}
 		
-		openingHoursData = new OpeningHoursData(openingHours);
+		try {
+			openingHoursData = new OpeningHoursData(openingHours);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
-	public boolean isOpen(Date currentTime) {
-		return openingHoursData.isOpen(currentTime);
+	public int isOpen(Date currentTime) {
+		int open = RestroomData.TOILET_UNCERTAIN;
+		try {
+			open = openingHoursData.isOpen(new Date()) ? RestroomData.TOILET_OPEN
+					: RestroomData.TOILET_CLOSE;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return open;
 	}
 	
 	public String getDescription() {

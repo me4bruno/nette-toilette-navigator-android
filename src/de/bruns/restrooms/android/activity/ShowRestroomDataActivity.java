@@ -1,5 +1,7 @@
 package de.bruns.restrooms.android.activity;
 
+import java.util.Date;
+
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -74,7 +76,9 @@ public class ShowRestroomDataActivity extends MapActivity {
 
 		// restroom location overlay
 		Drawable restroomLocationDrawable = null;
-		switch (restroom.isOpen()) {
+		
+		int open = restroom.isOpen(new Date());
+		switch (open) {
 		case RestroomData.TOILET_OPEN:
 			restroomLocationDrawable = this.getResources().getDrawable(
 					R.drawable.toilets_green);
@@ -89,7 +93,7 @@ public class ShowRestroomDataActivity extends MapActivity {
 			break;
 		default:
 			throw new RuntimeException("Unknown isOpen image: "
-					+ restroom.isOpen());
+					+ restroom.isOpen(new Date()));
 		}
 		SingleItemOverlay restroomLocationOverlay = new SingleItemOverlay(this,
 				restroomLocationDrawable, restroomLocation, restroom.getName());

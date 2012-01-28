@@ -1,5 +1,6 @@
 package de.bruns.restrooms.android.activity;
 
+import java.util.Date;
 import java.util.List;
 
 import android.content.Context;
@@ -48,7 +49,7 @@ public class RestroomListAdapter extends BaseAdapter {
 
 		RestroomData restroomData = sortedRestroomData.get(position);
 
-		String filename = restroomData.getOpenImageFilename();
+		String filename = RestroomData.TOILET_IMAGES[restroomData.isOpen(new Date())];
 		int id = context.getResources().getIdentifier(filename, "drawable",
 				context.getString(R.string.package_str));
 		Bitmap restroomIcon = BitmapFactory.decodeResource(context.getResources(), id);
