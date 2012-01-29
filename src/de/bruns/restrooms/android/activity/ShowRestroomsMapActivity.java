@@ -5,6 +5,7 @@ import java.util.List;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -19,40 +20,48 @@ import com.google.android.maps.MapController;
 import com.google.android.maps.MapView;
 import com.google.android.maps.OverlayItem;
 
+import de.bruns.restrooms.android.DrawableFactory;
 import de.bruns.restrooms.android.R;
 import de.bruns.restrooms.android.data.RestroomData;
 import de.bruns.restrooms.android.service.CurrentPositionService;
 import de.bruns.restrooms.android.service.RestroomDataService;
+import de.bruns.restrooms.android.service.TimeService;
 
 public class ShowRestroomsMapActivity extends MapActivity {
-
-	// FIXME - show current position
 
 	private static final String LOG_TAG = ShowRestroomDataActivity.class
 			.getSimpleName();
 	
-	private MapView mMapView;
-	private MapController mMapController;
+	private MapView mapView;
+	private MapController mapController;
+	private TimeService timeService;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
+		timeService = TimeService.instance();
+		
 		setContentView(R.layout.show_restrooms_map);
 
-		mMapView = (MapView) findViewById(R.id.show_map_map);
-		mMapController = mMapView.getController();
+		mapView = (MapView) findViewById(R.id.show_map_map);
+		mapController = mapView.getController();
 
-		int maxZoomLevel = mMapView.getMaxZoomLevel();
-		mMapController.setZoom(maxZoomLevel - 3);
+		int maxZoomLevel = mapView.getMaxZoomLevel();
+		mapController.setZoom(maxZoomLevel - 3);
 
-		mMapView.setBuiltInZoomControls(true); 
+		mapView.setBuiltInZoomControls(true); 
 
-		mMapController.animateTo(CurrentPositionService.instance(this).getCurrentPosition());
+		mapController.animateTo(CurrentPositionService.instance(this).getCurrentPosition());
 
 		// overlay
-		RestroomItemizedOverlay restroomOverlay = new RestroomItemizedOverlay(this);
-		mMapView.getOverlays().add(restroomOverlay);
+		mapView.getOverlays().add(new RestroomItemizedOverlay(this));
+		
+		GeoPoint currentPosition = CurrentPositionService.instance(this).getCurrentPosition();
+		SingleItemOverlay myPositionOverlay = new SingleItemOverlay(this, this
+				.getResources().getDrawable(R.drawable.you_are_here),currentPosition, "Mein Standort");
+		mapView.getOverlays().add(myPositionOverlay);
+		
 		
 		// buttons
 		Button buttonAsList = (Button) findViewById(R.id.button_aslist);
@@ -91,13 +100,15 @@ public class ShowRestroomsMapActivity extends MapActivity {
 		private List<RestroomOverlayItem> overlayItems = new ArrayList<RestroomOverlayItem>();
 
 		public RestroomItemizedOverlay(Context context) {
-			// FIXME replace image of the map
-			
 			super(boundCenterBottom(context.getResources().getDrawable(R.drawable.restroom_yellow)));
-
+			
 			for (RestroomData restroomData : RestroomDataService.instance(context).getRestrooms()) {
-				overlayItems.add(new RestroomOverlayItem(restroomData));
+				RestroomOverlayItem restroomOverlayItem = new RestroomOverlayItem(restroomData);
+				Drawable marker = DrawableFactory.getRestroomMarker(context,restroomData, timeService.getTime());
+				restroomOverlayItem.setMarker(marker);
+				overlayItems.add(restroomOverlayItem);
 			}
+
 			populate();
 		}
 

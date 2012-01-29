@@ -2,7 +2,6 @@ package de.bruns.restrooms.android.activity;
 
 import java.util.Date;
 
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -12,18 +11,15 @@ import android.view.View;
 import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.maps.GeoPoint;
-import com.google.android.maps.ItemizedOverlay;
 import com.google.android.maps.MapActivity;
 import com.google.android.maps.MapController;
 import com.google.android.maps.MapView;
-import com.google.android.maps.OverlayItem;
 
+import de.bruns.restrooms.android.DrawableFactory;
 import de.bruns.restrooms.android.IntentFactory;
 import de.bruns.restrooms.android.R;
-import de.bruns.restrooms.android.data.OpeningImageData;
 import de.bruns.restrooms.android.data.RestroomData;
 import de.bruns.restrooms.android.service.CurrentPositionService;
 import de.bruns.restrooms.android.service.RestroomDataService;
@@ -79,27 +75,7 @@ public class ShowRestroomDataActivity extends MapActivity {
 		Date currentTime = TimeService.instance().getTime();
 
 		// restroom location overlay
-		Drawable restroomLocationDrawable = null;
-		
-		// FIXME - move codde into OpeningImageData
-		int open = restroom.isOpen(currentTime);
-		switch (open) {
-		case OpeningImageData.RESTROOM_OPEN:
-			restroomLocationDrawable = this.getResources().getDrawable(
-					R.drawable.restroom_green);
-			break;
-		case OpeningImageData.RESTROOM_CLOSE:
-			restroomLocationDrawable = this.getResources().getDrawable(
-					R.drawable.restroom_red);
-			break;
-		case OpeningImageData.RESTROOM_UNCERTAIN:
-			restroomLocationDrawable = this.getResources().getDrawable(
-					R.drawable.restroom_yellow);
-			break;
-		default:
-			throw new RuntimeException("Unknown image: " + open);
-		}
-		
+		Drawable restroomLocationDrawable = DrawableFactory.getRestroomMarker(this, restroom, currentTime);
 		SingleItemOverlay restroomLocationOverlay = new SingleItemOverlay(this,
 				restroomLocationDrawable, restroomLocation, restroom.getName());
 		mapView.getOverlays().add(restroomLocationOverlay);
@@ -162,38 +138,6 @@ public class ShowRestroomDataActivity extends MapActivity {
 		return false;
 	}
 
-	public class SingleItemOverlay extends ItemizedOverlay<OverlayItem> {
-
-		private final Context context;
-		private final String toastText;
-		private final GeoPoint position;
-
-		public SingleItemOverlay(Context context, Drawable marker,
-				GeoPoint position, String toastText) {
-			super(boundCenterBottom(marker));
-			this.context = context;
-			this.position = position;
-			this.toastText = toastText;
-			populate();
-		}
-
-		@Override
-		protected OverlayItem createItem(int i) {
-			return new OverlayItem(position, null, null);
-		}
-
-		@Override
-		public int size() {
-			return 1;
-		}
-
-		@Override
-		protected boolean onTap(int index) {
-			Toast.makeText(context, toastText, Toast.LENGTH_SHORT).show();
-			return true;
-		}
-	}
-	
 	private int getZoomForDistance(int distanceInMeter) {
 		int zoom = 11;
 		if (distanceInMeter  < 50) {

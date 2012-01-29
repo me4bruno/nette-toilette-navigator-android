@@ -7,9 +7,11 @@ import java.util.Map;
 
 public class OpeningHoursData {
 
-	private static String OPEN_CHARACTER = "Y";
-	private static String CLOSE_CHARACTER = "N";
-	private static String UNKNOWN_CHARACTER = "U";
+	public static int OPEN_VALUE = 0;
+	public static int CLOSE_VALUE = 1;
+	public static int UNKNOWN_VALUE = 2;
+
+	private String[] OPENING_CHARACTER = new String[] { "Y",  "N", "U" };
 
 	private static Map<String, Integer> WEEKDAYS = new HashMap<String, Integer>();
 	static {
@@ -30,50 +32,52 @@ public class OpeningHoursData {
 	public static int SATUDAY = 5;
 	public static int SUNDAY = 6;
 
-	private boolean[][] openingHours;
-
-	public OpeningHoursData() {
-		openingHours = new boolean[7][48];
-	}
+	private int[][] openingHours;
 
 	public OpeningHoursData(String openingHoursString) {
-		this();
+		openingHours = new int[7][48];
 
 		for (int d = 0; d < 7; d++) {
 			for (int h = 0; h < openingHours[d].length; h++) {
-				openingHours[d][h] = false;
+				openingHours[d][h] = UNKNOWN_VALUE;
 			}
 		}
 
-		String[] splitOpeningHoursStrings = openingHoursString.split(",");
-		for (String splitOpeningHoursString : splitOpeningHoursStrings) {
+		try {
+			String[] splitOpeningHoursStrings = openingHoursString.split(",");
+			for (String splitOpeningHoursString : splitOpeningHoursStrings) {
 
-			String splitOpeningHoursStringTrimmed = splitOpeningHoursString
-					.trim();
-			int firstIndexOfSpace = splitOpeningHoursStringTrimmed.indexOf(" ");
-			String dayString = splitOpeningHoursStringTrimmed.substring(0,
-					firstIndexOfSpace);
-			String timeString = splitOpeningHoursStringTrimmed
-					.substring(firstIndexOfSpace);
+				String splitOpeningHoursStringTrimmed = splitOpeningHoursString
+						.trim();
+				int firstIndexOfSpace = splitOpeningHoursStringTrimmed.indexOf(" ");
+				String dayString = splitOpeningHoursStringTrimmed.substring(0,
+						firstIndexOfSpace);
+				String timeString = splitOpeningHoursStringTrimmed
+						.substring(firstIndexOfSpace);
 
-			String[] splitTimeIntervals = timeString.split("\\+");
-			for (String splitTimeInterval : splitTimeIntervals) {
-				String[] splitTimes = splitTimeInterval.trim().split("-");
-				String startString = splitTimes[0].trim();
-				int start = convertStringToHalfHours(startString);
-				String endString = splitTimes[1].replace(" Uhr", "");
-				int end = convertStringToHalfHours(endString);
+				String[] splitTimeIntervals = timeString.split("\\+");
+				for (String splitTimeInterval : splitTimeIntervals) {
+					String[] splitTimes = splitTimeInterval.trim().split("-");
+					String startString = splitTimes[0].trim();
+					int start = convertStringToHalfHours(startString);
+					String endString = splitTimes[1].replace(" Uhr", "");
+					int end = convertStringToHalfHours(endString);
 
-				for (int d = 0; d < 7; d++) {
-					boolean isOpenDay = isDayInDayString(dayString, d);
-					for (int h = 0; h < openingHours[d].length; h++) {
-						boolean isOpenHour = start <= h && h < end && isOpenDay;
-						if (isOpenHour) {
-							openingHours[d][h] = true;
+					for (int d = 0; d < 7; d++) {
+						boolean isOpenDay = isDayInDayString(dayString, d);
+						for (int h = 0; h < openingHours[d].length; h++) {
+							boolean isOpenHour = start <= h && h < end && isOpenDay;
+							if (isOpenHour) {
+								openingHours[d][h] = OPEN_VALUE;
+							} else if (openingHours[d][h] == UNKNOWN_VALUE) {
+								openingHours[d][h] = CLOSE_VALUE;
+							}
 						}
 					}
 				}
 			}
+		} catch (Exception e) {
+			// ignore exception - use UNKNOWN_VALUE
 		}
 	}
 
@@ -113,13 +117,14 @@ public class OpeningHoursData {
 			if (i != 0 && i % 6 == 0) {
 				openString.append("|");
 			}
-			openString.append(openingHours[weekday][i] ? OPEN_CHARACTER
-					: CLOSE_CHARACTER);
+			
+			String appendCharacter = OPENING_CHARACTER[openingHours[weekday][i]];
+			openString.append(appendCharacter);
 		}
 		return openString.toString();
 	}
 
-	public boolean isOpen(Date currentTime) {
+	public int isOpen(Date currentTime) {
 		Calendar instance = Calendar.getInstance();
 		instance.setTime(currentTime);
 		// -2 instead of +5 is correct, but the mod operation should return a positive number
@@ -129,7 +134,7 @@ public class OpeningHoursData {
 			hourOfDayIndex = hourOfDayIndex + 1;
 		}
 
-		boolean[] openingHoursOfThisDay = openingHours[dayOfWeekIndex];
+		int[] openingHoursOfThisDay = openingHours[dayOfWeekIndex];
 		return openingHoursOfThisDay[hourOfDayIndex];
 	}
 }

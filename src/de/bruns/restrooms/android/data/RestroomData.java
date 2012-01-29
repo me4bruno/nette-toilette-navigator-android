@@ -19,7 +19,7 @@ public class RestroomData {
 	private OpeningHoursData openingHoursData;
 
 	public RestroomData() {
-		openingHoursData = new OpeningHoursData();
+		openingHoursData = null;
 	}
 
 	public String getFullString() {
@@ -109,14 +109,7 @@ public class RestroomData {
 	}
 
 	public int isOpen(Date currentTime) {
-		int open = OpeningImageData.RESTROOM_UNCERTAIN;
-		try {
-			open = openingHoursData.isOpen(currentTime) ? OpeningImageData.RESTROOM_OPEN
-					: OpeningImageData.RESTROOM_CLOSE;
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return open;
+		return openingHoursData.isOpen(currentTime);
 	}
 	
 	public String getDescription() {
