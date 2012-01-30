@@ -111,6 +111,10 @@ public class RestroomData {
 	public int isOpen(Date currentTime) {
 		return openingHoursData.isOpen(currentTime);
 	}
+
+	public OpeningHoursData getOpeningHoursData() {
+		return openingHoursData;
+	}
 	
 	public String getDescription() {
 		return description;

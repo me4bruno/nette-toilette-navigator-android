@@ -19,7 +19,6 @@ public class RestroomDataProvider {
 			InputStream stream = KmlRestroomParser.class.getResource(
 					"Nette_Toilette_Bremen.kml").openStream();
 			KmlRestroomParser kmlParser = new KmlRestroomParser(stream);
-			kmlParser.parse();
 			result = kmlParser.getRestroomData();
 		} catch (IOException e) {
 			e.printStackTrace();

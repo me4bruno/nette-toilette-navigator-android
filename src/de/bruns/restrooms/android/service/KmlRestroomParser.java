@@ -1,112 +1,80 @@
-/*
- * Copyright (C) 2008 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package de.bruns.restrooms.android.service;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
-import org.xml.sax.SAXParseException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import de.bruns.restrooms.android.data.RestroomData;
 
-/**
- * A very basic KML parser to meet the need of the emulator control panel.
- * <p/>
- * It parses basic Placemark information.
- */
 public class KmlRestroomParser {
 
-	private final static String NS_KML_2 = "http://earth.google.com/kml/2."; //$NON-NLS-1$
+	private final static String NS_KML_2 = "http://earth.google.com/kml/2.";
+	private final static String NODE_PLACEMARK = "Placemark";
+	private final static String NODE_NAME = "name";
+	private final static String NODE_SNIPPET = "description";
+	private final static String NODE_COORDINATES = "coordinates";
 
-	private final static String NODE_PLACEMARK = "Placemark"; //$NON-NLS-1$
-	private final static String NODE_NAME = "name"; //$NON-NLS-1$
-	private final static String NODE_SNIPPET = "description"; //$NON-NLS-1$
-	private final static String NODE_COORDINATES = "coordinates"; //$NON-NLS-1$
-
-	private final static Pattern sLocationPattern = Pattern
+	private final static Pattern locationPattern = Pattern
 			.compile("([^,]+),([^,]+)(?:,([^,]+))?");
 
-	private static SAXParserFactory sParserFactory;
+	private List<RestroomData> allRestroomData;
 
-	static {
-		sParserFactory = SAXParserFactory.newInstance();
-		sParserFactory.setNamespaceAware(true);
+	public KmlRestroomParser(InputStream inputStream) {
+		allRestroomData = new ArrayList<RestroomData>();
+
+		InputSource inputSource = new InputSource(inputStream);
+		try {
+			SAXParserFactory parserFactory = SAXParserFactory.newInstance();
+			parserFactory.setNamespaceAware(true);
+			SAXParser parser = parserFactory.newSAXParser();
+			parser.parse(inputSource, new KmlHandler());
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
 	}
 
-	private KmlHandler mHandler;
-	private InputSource inputSource;
+	public List<RestroomData> getRestroomData() {
+		return allRestroomData;
+	}
 
-	/**
-	 * Handler for the SAX parser.
-	 */
-	private static class KmlHandler extends DefaultHandler {
+	private class KmlHandler extends DefaultHandler {
 
-		List<RestroomData> allToilletteData;
-		RestroomData currentToiletteData;
+		private final StringBuilder stringAccumulator;
+		private RestroomData currentRestroomData;
 
 		public KmlHandler() {
-			allToilletteData = new ArrayList<RestroomData>();
+			stringAccumulator = new StringBuilder();
 		}
-
-		final StringBuilder mStringAccumulator = new StringBuilder();
-
-		boolean mSuccess = true;
 
 		@Override
 		public void startElement(String uri, String localName, String name,
 				Attributes attributes) throws SAXException {
-
-			// we only care about the standard GPX nodes.
 			try {
 				if (uri.startsWith(NS_KML_2)) {
 					if (NODE_PLACEMARK.equals(localName)) {
-						currentToiletteData = new RestroomData();
-						allToilletteData.add(currentToiletteData);
+						currentRestroomData = new RestroomData();
+						allRestroomData.add(currentRestroomData);
 					}
 				}
 			} finally {
-				// no matter the node, we empty the StringBuilder accumulator
-				// when we start
-				// a new node.
-				mStringAccumulator.setLength(0);
+				stringAccumulator.setLength(0);
 			}
 		}
 
-		/**
-		 * Processes new characters for the node content. The characters are
-		 * simply stored, and will be processed when
-		 * {@link #endElement(String, String, String)} is called.
-		 */
 		@Override
 		public void characters(char[] ch, int start, int length)
 				throws SAXException {
-			mStringAccumulator.append(ch, start, length);
+			stringAccumulator.append(ch, start, length);
 		}
 
 		@Override
@@ -114,91 +82,38 @@ public class KmlRestroomParser {
 				throws SAXException {
 			if (uri.startsWith(NS_KML_2)) {
 				if (NODE_PLACEMARK.equals(localName)) {
-					currentToiletteData = null;
+					currentRestroomData = null;
 				} else if (NODE_NAME.equals(localName)) {
-					if (currentToiletteData != null) {
-						currentToiletteData.setName(mStringAccumulator
+					if (currentRestroomData != null) {
+						currentRestroomData.setName(stringAccumulator
 								.toString());
 					}
 				} else if (NODE_SNIPPET.equals(localName)) {
-					if (currentToiletteData != null) {
-						currentToiletteData.setDescription(mStringAccumulator
+					if (currentRestroomData != null) {
+						currentRestroomData.setDescription(stringAccumulator
 								.toString());
 					}
 				} else if (NODE_COORDINATES.equals(localName)) {
-					if (currentToiletteData != null) {
-						parseLocation(currentToiletteData,
-								mStringAccumulator.toString());
+					if (currentRestroomData != null) {
+						Matcher m = locationPattern.matcher(stringAccumulator
+								.toString());
+						if (m.matches()) {
+							try {
+								double longitude = Double.parseDouble(m
+										.group(1));
+								double latitude = Double
+										.parseDouble(m.group(2));
+
+								currentRestroomData.setPosition(longitude,
+										latitude);
+							} catch (NumberFormatException e) {
+								// wrong data, do nothing.
+							}
+						}
 					}
 				}
 			}
 		}
-
-		@Override
-		public void error(SAXParseException e) throws SAXException {
-			mSuccess = false;
-		}
-
-		@Override
-		public void fatalError(SAXParseException e) throws SAXException {
-			mSuccess = false;
-		}
-
-		/**
-		 * Parses the location string and store the information into a
-		 * {@link RestroomData}.
-		 * 
-		 * @param locationNode
-		 *            the {@link RestroomData} to receive the location data.
-		 * @param location
-		 *            The string containing the location info.
-		 */
-		private void parseLocation(RestroomData locationNode, String location) {
-			Matcher m = sLocationPattern.matcher(location);
-			if (m.matches()) {
-				try {
-					double longitude = Double.parseDouble(m.group(1));
-					double latitude = Double.parseDouble(m.group(2));
-
-					locationNode.setPosition(longitude, latitude);
-				} catch (NumberFormatException e) {
-					// wrong data, do nothing.
-				}
-			}
-		}
-
-		List<RestroomData> getRestroomData() {
-				return allToilletteData;
-		}
-
-		boolean getSuccess() {
-			return mSuccess;
-		}
 	}
 
-	public KmlRestroomParser(InputStream inputStream) {
-		this.inputSource = new InputSource(inputStream);
-	}
-
-	public boolean parse() {
-		try {
-			SAXParser parser = sParserFactory.newSAXParser();
-
-			mHandler = new KmlHandler();
-
-			parser.parse(inputSource, mHandler);
-
-			return mHandler.getSuccess();
-		} catch (ParserConfigurationException e) {
-		} catch (SAXException e) {
-		} catch (IOException e) {
-		} finally {
-		}
-
-		return false;
-	}
-
-	public List<RestroomData> getRestroomData() {
-		return mHandler.getRestroomData();
-	}
 }

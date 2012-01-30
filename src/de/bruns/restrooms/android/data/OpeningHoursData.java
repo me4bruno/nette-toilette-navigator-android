@@ -22,6 +22,7 @@ public class OpeningHoursData {
 		WEEKDAYS.put("FR", Integer.valueOf(4));
 		WEEKDAYS.put("SA", Integer.valueOf(5));
 		WEEKDAYS.put("SO", Integer.valueOf(6));
+		WEEKDAYS.put("SO+FEIERTAG", Integer.valueOf(6));
 	}
 
 	public static int MONDAY = 0;
@@ -63,14 +64,29 @@ public class OpeningHoursData {
 					String endString = splitTimes[1].replace(" Uhr", "");
 					int end = convertStringToHalfHours(endString);
 
-					for (int d = 0; d < 7; d++) {
-						boolean isOpenDay = isDayInDayString(dayString, d);
-						for (int h = 0; h < openingHours[d].length; h++) {
-							boolean isOpenHour = start <= h && h < end && isOpenDay;
-							if (isOpenHour) {
-								openingHours[d][h] = OPEN_VALUE;
-							} else if (openingHours[d][h] == UNKNOWN_VALUE) {
-								openingHours[d][h] = CLOSE_VALUE;
+					if (start <= end) {
+						for (int d = 0; d < 7; d++) {
+							boolean isOpenDay = isDayInDayString(dayString, d);
+							for (int h = 0; h < openingHours[d].length; h++) {
+								boolean isOpenHour = start <= h && h < end && isOpenDay;
+								if (isOpenHour) {
+									openingHours[d][h] = OPEN_VALUE;
+								} else if (openingHours[d][h] == UNKNOWN_VALUE) {
+									openingHours[d][h] = CLOSE_VALUE;
+								}
+							}
+						}
+					} else {
+						for (int d = 0; d < 7; d++) {
+							boolean isOpenDay = isDayInDayString(dayString, d);
+							for (int h = 0; h < openingHours[d].length; h++) {
+								boolean isOpenHour = (start <= h || h < end) && isOpenDay;
+								int dModulo = (d + (h < end ? 1 : 0)) % 7;
+								if (isOpenHour) {
+									openingHours[dModulo][h] = OPEN_VALUE;
+								} else if (openingHours[dModulo][h] == UNKNOWN_VALUE) {
+									openingHours[dModulo][h] = CLOSE_VALUE;
+								}								
 							}
 						}
 					}
@@ -82,7 +98,7 @@ public class OpeningHoursData {
 	}
 
 	/**
-	 * Example: "taeglich", "Mo-Fr", "Sa"
+	 * Example: "taeglich", "Mo-Fr", "Sa", "Do-Mo", "So+Feiertag"
 	 */
 	private boolean isDayInDayString(String dayString, int dayIndex) {
 		boolean result = false;
@@ -90,7 +106,11 @@ public class OpeningHoursData {
 		if (days.length == 2) {
 			int startDay = WEEKDAYS.get(days[0].toUpperCase()).intValue();
 			int endDay = WEEKDAYS.get(days[1].toUpperCase()).intValue();
-			result = startDay <= dayIndex && dayIndex <= endDay;
+			if (startDay <= endDay) {
+				result = startDay <= dayIndex && dayIndex <= endDay;
+			} else {
+				result = (dayIndex >= startDay) || (dayIndex <= endDay);
+			}
 		} else if (days.length == 1) {
 			String dayAsUppercase = days[0].trim().toUpperCase();
 			if (dayAsUppercase.equals("TAEGLICH")) {

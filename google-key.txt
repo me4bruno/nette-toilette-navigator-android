@@ -1,0 +1,5 @@
+Debug:
+   	android:apiKey="0Q8bs9LEx6q3hQmJxS-EOouZSKlYsv7TEw00Dlg"
+
+Produktiv:
+	android:apiKey="0Q8bs9LEx6q3ogo5G2QbOOEEgYjcZLU5eKkpc5Q"

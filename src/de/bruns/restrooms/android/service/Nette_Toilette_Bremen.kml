@@ -471,8 +471,8 @@
   </Placemark>
   <Placemark>
     <name>Akropolis,</name>
-    <Snippet>Akropolis, Lindenstr. 3, Mi-Mo 18:00- 23:00, So und Feiert. 12:00-15:00 + 18:00-</Snippet>
-    <description><![CDATA[Akropolis, Lindenstr. 3, Mi-Mo 18:00- 23:00, So und Feiert. 12:00-15:00 + 18:00-23:30 Uhr]]></description>
+    <Snippet>Akropolis, Lindenstr. 3, Mi-Mo 18:00-23:00, So+Feiertag 12:00-15:00 + 18:00-23:30 Uhr</Snippet>
+    <description><![CDATA[Akropolis, Lindenstr. 3, Mi-Mo 18:00-23:00, So+Feiertag 12:00-15:00 + 18:00-23:30 Uhr]]></description>
     <styleUrl>#style35</styleUrl>
     <Point>
       <coordinates>8.609735,53.175743,0.000000</coordinates>
@@ -525,8 +525,8 @@
   </Placemark>
   <Placemark>
     <name>Muddy&#39;s</name>
-    <Snippet>Muddy&#39;s, Vegesacker Bahnhofsplatz 34, Mo-So 10:00-01:00, Fr+Sa 10:00-05:00 Uhr</Snippet>
-    <description><![CDATA[Muddy's, Vegesacker Bahnhofsplatz 34, Mo-So 10:00-01:00, Fr+Sa 10:00-05:00 Uhr]]></description>
+    <Snippet>Muddy&#39;s, Vegesacker Bahnhofsplatz 34, So-Do 10:00-01:00, Fr-Sa 10:00-05:00 Uhr</Snippet>
+    <description><![CDATA[Muddy's, Vegesacker Bahnhofsplatz 34, So-Do 10:00-01:00, Fr-Sa 10:00-05:00 Uhr]]></description>
     <styleUrl>#style41</styleUrl>
     <Point>
       <coordinates>8.629047,53.169495,0.000000</coordinates>
@@ -624,8 +624,8 @@
   </Placemark>
   <Placemark>
     <name>Stadtbibliothek Vegesack</name>
-    <Snippet>Stadtbibliothek Vegesack, Aumunder Heerweg 87, MoMiDo 11:00-18:00, Fr 11:00-17:0</Snippet>
-    <description><![CDATA[Stadtbibliothek Vegesack, Aumunder Heerweg 87, MoMiDo 11:00-18:00, Fr 11:00-17:00, Sa 10:00-13:00 Uhr]]></description>
+    <Snippet>Stadtbibliothek Vegesack, Aumunder Heerweg 87, Mo 11:00-18:00, Mi-Do 11:00-18:00, Fr 11:00-17:00, Sa 10:00-13:00 Uhr</Snippet>
+    <description><![CDATA[Stadtbibliothek Vegesack, Aumunder Heerweg 87, Mo 11:00-18:00, Mi-Do 11:00-18:00, Fr 11:00-17:00, Sa 10:00-13:00 Uhr]]></description>
     <styleUrl>#style51</styleUrl>
     <Point>
       <coordinates>8.620214,53.174236,0.000000</coordinates>
@@ -642,8 +642,8 @@
   </Placemark>
   <Placemark>
     <name>Buergerhaus Vegesack</name>
-    <Snippet>Buergerhaus Vegesack, Kirchheide 49, Mo-Fr 9:00-20:.00, Sa 9:00-14:00 Uhr</Snippet>
-    <description><![CDATA[Buergerhaus Vegesack, Kirchheide 49, Mo-Fr 9:00-20:.00, Sa 9:00-14:00 Uhr]]></description>
+    <Snippet>Buergerhaus Vegesack, Kirchheide 49, Mo-Fr 9:00-20:00, Sa 9:00-14:00 Uhr</Snippet>
+    <description><![CDATA[Buergerhaus Vegesack, Kirchheide 49, Mo-Fr 9:00-20:00, Sa 9:00-14:00 Uhr]]></description>
     <styleUrl>#style54</styleUrl>
     <Point>
       <coordinates>8.617690,53.174362,0.000000</coordinates>
@@ -660,8 +660,8 @@
   </Placemark>
   <Placemark>
     <name>Zum Biber</name>
-    <Snippet>Zum Biber, Heinrich-Hoops-Str. 32, Mo-Fr 17:00-22:00, Sa-So 10:30-14:00 u. 17:00</Snippet>
-    <description><![CDATA[Zum Biber, Heinrich-Hoops-Str. 32, Mo-Fr 17:00-22:00, Sa-So 10:30-14:00 u. 17:00-22:00 Uhr]]></description>
+    <Snippet>Zum Biber, Heinrich-Hoops-Str. 32, Mo-Fr 17:00-22:00, Sa-So 10:30-14:00 + 17:00</Snippet>
+    <description><![CDATA[Zum Biber, Heinrich-Hoops-Str. 32, Mo-Fr 17:00-22:00, Sa-So 10:30-14:00 + 17:00-22:00 Uhr]]></description>
     <styleUrl>#style32</styleUrl>
     <Point>
       <coordinates>8.715993,53.153393,0.000000</coordinates>
@@ -696,8 +696,8 @@
   </Placemark>
   <Placemark>
     <name>emma am see</name>
-    <Snippet>emma am see, Im B rgerpark, Di-So 9:00-23:00 Uhr</Snippet>
-    <description><![CDATA[emma am see, Im B rgerpark, Di-So 9:00-23:00 Uhr]]></description>
+    <Snippet>emma am see, Im Bürgerpark, Di-So 9:00-23:00 Uhr</Snippet>
+    <description><![CDATA[emma am see, Im Bürgerpark, Di-So 9:00-23:00 Uhr]]></description>
     <styleUrl>#style31</styleUrl>
     <Point>
       <coordinates>8.823997,53.094280,0.000000</coordinates>
@@ -705,8 +705,8 @@
   </Placemark>
   <Placemark>
     <name>Akropolis</name>
-    <Snippet>Akropolis, H.-H.-Meier-Allee 42, Mo-Do 18:00-23:30; Fr-So 12:00-14:30 u. 18:00-2</Snippet>
-    <description><![CDATA[Akropolis, H.-H.-Meier-Allee 42, Mo-Do 18:00-23:30; Fr-So 12:00-14:30 u. 18:00-23:30 Uhr]]></description>
+    <Snippet>Akropolis, H.-H.-Meier-Allee 42, Mo-Do 18:00-23:30, Fr-So 12:00-14:30 + 18:00-23:30 Uhr</Snippet>
+    <description><![CDATA[Akropolis, H.-H.-Meier-Allee 42, Mo-Do 18:00-23:30, Fr-So 12:00-14:30 + 18:00-23:30 Uhr]]></description>
     <styleUrl>#style33</styleUrl>
     <Point>
       <coordinates>8.845709,53.092541,0.000000</coordinates>
@@ -750,8 +750,8 @@
   </Placemark>
   <Placemark>
     <name>Artemis</name>
-    <Snippet>Artemis, Neukirchstr. 40, Mo-Sa 17:30-24.00, So+Feiertags 12:00-14.30, So 17:30-</Snippet>
-    <description><![CDATA[Artemis, Neukirchstr. 40, Mo-Sa 17:30-24.00, So+Feiertags 12:00-14.30, So 17:30-24:00 Uhr]]></description>
+    <Snippet>Artemis, Neukirchstr. 40, Mo-Sa 17:30-24:00, So+Feiertag 12:00-14:30, So 17:30-24:00 Uhr</Snippet>
+    <description><![CDATA[Artemis, Neukirchstr. 40, Mo-Sa 17:30-24:00, So+Feiertag 12:00-14:30, So 17:30-24:00 Uhr]]></description>
     <styleUrl>#style61</styleUrl>
     <Point>
       <coordinates>8.811535,53.093300,0.000000</coordinates>
@@ -786,8 +786,8 @@
   </Placemark>
   <Placemark>
     <name>Sentosa</name>
-    <Snippet>Sentosa, Mo-So 12:00-15:00 u. 17:30-23:00 Uhr</Snippet>
-    <description><![CDATA[Sentosa, Mo-So 12:00-15:00 u. 17:30-23:00 Uhr]]></description>
+    <Snippet>Sentosa, Mo-So 12:00-15:00 + 17:30-23:00 Uhr</Snippet>
+    <description><![CDATA[Sentosa, Mo-So 12:00-15:00 + 17:30-23:00 Uhr]]></description>
     <styleUrl>#style43</styleUrl>
     <Point>
       <coordinates>8.810620,53.096607,0.000000</coordinates>
@@ -814,7 +814,7 @@
   <Placemark>
     <name>Cafe Knigge</name>
     <Snippet>Caf‚ Knigge, S”gestr. 42/44, Mo-Sa 9:00-18:30, So 11:00-18:00 Uhr</Snippet>
-    <description><![CDATA[<div dir="ltr">Cafe Knigge, Soegestr. 42/44, Mo-Sa 9:00-18:30, So 11:00-18:00 Uhr</div>]]></description>
+    <description><![CDATA[<div dir="ltr">Cafe Knigge, Soegestr. 42/44, Mo-Sa 9:00-18:30, So 11:00-18:00 Uhr]]></description>
     <styleUrl>#style2</styleUrl>
     <Point>
       <coordinates>8.807874,53.078075,0.000000</coordinates>
@@ -840,8 +840,8 @@
   </Placemark>
   <Placemark>
     <name>Murphys Corner</name>
-    <Snippet>Murphys Corner, Buntentorsteinweg 217, Di-So. 17:00-2:00 Uhr</Snippet>
-    <description><![CDATA[Murphys Corner, Buntentorsteinweg 217, Di-So. 17:00-2:00 Uhr]]></description>
+    <Snippet>Murphys Corner, Buntentorsteinweg 217, Di-So 17:00-2:00 Uhr</Snippet>
+    <description><![CDATA[Murphys Corner, Buntentorsteinweg 217, Di-So 17:00-2:00 Uhr]]></description>
     <styleUrl>#style20</styleUrl>
     <Point>
       <coordinates>8.810375,53.061581,0.000000</coordinates>
@@ -858,8 +858,8 @@
   </Placemark>
   <Placemark>
     <name>TeleNetcafe</name>
-    <Snippet>TeleNetcaf‚, Langemarkstr. 68-70, Mo-Sa 10:30-24:00, So+Feiertag 12:00-24:00</Snippet>
-    <description><![CDATA[<div dir="ltr">TeleNetcafe, Langemarkstr. 68-70, Mo-Sa 10:30-24:00, So+Feiertag 12:00-24:00</div>]]></description>
+    <Snippet>TeleNetcaf‚ Langemarkstr. 68-70, Mo-Sa 10:30-24:00, So+Feiertag 12:00-24:00</Snippet>
+    <description><![CDATA[TeleNetcafe, Langemarkstr. 68-70, Mo-Sa 10:30-24:00, So+Feiertag 12:00-24:00]]></description>
     <styleUrl>#style26</styleUrl>
     <Point>
       <coordinates>8.794136,53.074074,0.000000</coordinates>
@@ -867,8 +867,8 @@
   </Placemark>
   <Placemark>
     <name>Veg. World Werder</name>
-    <Snippet>Veg. World Werder, Neustadtswall 12d, Mo-Fr 11:30-14:30 u. 17:30-22:45, Sa 15:00</Snippet>
-    <description><![CDATA[Veg. World Werder, Neustadtswall 12d, Mo-Fr 11:30-14:30 u. 17:30-22:45, Sa 15:00-22:45, So 12:30-22:45 Uhr]]></description>
+    <Snippet>Veg. World Werder, Neustadtswall 12d, Mo-Fr 11:30-14:30 + 17:30-22:45, Sa 15:00</Snippet>
+    <description><![CDATA[Veg. World Werder, Neustadtswall 12d, Mo-Fr 11:30-14:30 + 17:30-22:45, Sa 15:00-22:45, So 12:30-22:45 Uhr]]></description>
     <styleUrl>#style9</styleUrl>
     <Point>
       <coordinates>8.791406,53.073647,0.000000</coordinates>
@@ -894,8 +894,8 @@
   </Placemark>
   <Placemark>
     <name>Salon Tulai</name>
-    <Snippet>Salon Tulai, Lesumerheerstr. 93, 28717 Bremen, Di-Sa 10:00-18:00  Uhr</Snippet>
-    <description><![CDATA[Salon Tulai, Lesumerheerstr. 93, 28717 Bremen, Di-Sa 10:00-18:00  Uhr]]></description>
+    <Snippet>Salon Tulai, Lesumerheerstr. 93 - 28717 Bremen, Di-Sa 10:00-18:00  Uhr</Snippet>
+    <description><![CDATA[Salon Tulai, Lesumerheerstr. 93 - 28717 Bremen, Di-Sa 10:00-18:00  Uhr]]></description>
     <styleUrl>#style15</styleUrl>
     <Point>
       <coordinates>8.666828,53.175182,0.000000</coordinates>
@@ -903,8 +903,8 @@
   </Placemark>
   <Placemark>
     <name>Bus-Ticket-Center</name>
-    <Snippet>Bus-Ticket-Center, Breitenweg 13, Mo.-Fr. 9:20-18:00,Sa 10:00-10:00, So 14:00-18</Snippet>
-    <description><![CDATA[Bus-Ticket-Center, Breitenweg 13, Mo.-Fr. 9:20-18:00,Sa 10:00-10:00, So 14:00-18:00]]></description>
+    <Snippet>Bus-Ticket-Center, Breitenweg 13, Mo-Fr 9:20-18:00,Sa 10:00-10:00, So 14:00-18:00</Snippet>
+    <description><![CDATA[Bus-Ticket-Center, Breitenweg 13, Mo-Fr 9:20-18:00,Sa 10:00-10:00, So 14:00-18:00]]></description>
     <styleUrl>#style28</styleUrl>
     <Point>
       <coordinates>8.807174,53.083603,0.000000</coordinates>
@@ -912,8 +912,8 @@
   </Placemark>
   <Placemark>
     <name>Tandur</name>
-    <Snippet>Tandur, Sielwall 5, taegl. 11:00 - 05:00 Uhr</Snippet>
-    <description><![CDATA[Tandur, Sielwall 5, taegl. 11:00 - 05:00 Uhr]]></description>
+    <Snippet>Tandur, Sielwall 5, taeglich 11:00 - 05:00 Uhr</Snippet>
+    <description><![CDATA[Tandur, Sielwall 5, taeglich 11:00 - 05:00 Uhr]]></description>
     <styleUrl>#style17</styleUrl>
     <Point>
       <coordinates>8.823186,53.072582,0.000000</coordinates>
@@ -921,8 +921,8 @@
   </Placemark>
   <Placemark>
     <name>Eis Panceria</name>
-    <Snippet>Eis Panceria, Ostertorsteinweg 73, Mo-Sa 10:00-21:00, So. 11:00-21:00</Snippet>
-    <description><![CDATA[Eis Panceria, Ostertorsteinweg 73, Mo-Sa 10:00-21:00, So. 11:00-21:00]]></description>
+    <Snippet>Eis Panceria, Ostertorsteinweg 73, Mo-Sa 10:00-21:00, So 11:00-21:00</Snippet>
+    <description><![CDATA[Eis Panceria, Ostertorsteinweg 73, Mo-Sa 10:00-21:00, So 11:00-21:00]]></description>
     <styleUrl>#style52</styleUrl>
     <Point>
       <coordinates>8.819127,53.072468,0.000000</coordinates>
@@ -930,8 +930,8 @@
   </Placemark>
   <Placemark>
     <name>Haifischbecken</name>
-    <Snippet>Haifischbecken, Vor dem Steintor 156, taegl. 15:00 - 02:00 Uhr</Snippet>
-    <description><![CDATA[Haifischbecken, Vor dem Steintor 156, taegl. 15:00 - 02:00 Uhr]]></description>
+    <Snippet>Haifischbecken, Vor dem Steintor 156, taeglich 15:00 - 02:00 Uhr</Snippet>
+    <description><![CDATA[Haifischbecken, Vor dem Steintor 156, taeglich 15:00 - 02:00 Uhr]]></description>
     <styleUrl>#style46</styleUrl>
     <Point>
       <coordinates>8.830792,53.071590,0.000000</coordinates>
@@ -939,8 +939,8 @@
   </Placemark>
   <Placemark>
     <name>Bauernstuebchen</name>
-    <Snippet>Bauernstuebchen, Vor dem Steintor 216, taegl. 00:00 - 24:00 Uhr</Snippet>
-    <description><![CDATA[Bauernstuebchen, Vor dem Steintor 216, taegl. 00:00 - 24:00 Uhr]]></description>
+    <Snippet>Bauernstuebchen, Vor dem Steintor 216, taeglich 00:00 - 24:00 Uhr</Snippet>
+    <description><![CDATA[Bauernstuebchen, Vor dem Steintor 216, taeglich 00:00 - 24:00 Uhr]]></description>
     <styleUrl>#style50</styleUrl>
     <Point>
       <coordinates>8.833188,53.071102,0.000000</coordinates>
@@ -948,8 +948,8 @@
   </Placemark>
   <Placemark>
     <name>Burgerhauss Karma</name>
-    <Snippet>Burgerhaus Karma, Vor dem Steintor 23, taegl. 12:00 - 24:00</Snippet>
-    <description><![CDATA[Burgerhaus Karma, Vor dem Steintor 23, taegl. 12:00 - 24:00]]></description>
+    <Snippet>Burgerhaus Karma, Vor dem Steintor 23, taeglich 12:00 - 24:00</Snippet>
+    <description><![CDATA[Burgerhaus Karma, Vor dem Steintor 23, taeglich 12:00 - 24:00]]></description>
     <styleUrl>#style11</styleUrl>
     <Point>
       <coordinates>8.824785,53.072929,0.000000</coordinates>
@@ -966,8 +966,8 @@
   </Placemark>
   <Placemark>
     <name>Amadeus</name>
-    <Snippet>Amadeus, Hamburgerstrasse 44, Mo -Sa. 11:00-22:00, So 10:00-22:00 Uhr</Snippet>
-    <description><![CDATA[Amadeus, Hamburgerstrasse 44, Mo -Sa. 11:00-22:00, So 10:00-22:00 Uhr]]></description>
+    <Snippet>Amadeus, Hamburgerstrasse 44, Mo-Sa 11:00-22:00, So 10:00-22:00 Uhr</Snippet>
+    <description><![CDATA[Amadeus, Hamburgerstrasse 44, Mo-Sa 11:00-22:00, So 10:00-22:00 Uhr]]></description>
     <styleUrl>#style30</styleUrl>
     <Point>
       <coordinates>8.837705,53.070034,0.000000</coordinates>
@@ -984,8 +984,8 @@
   </Placemark>
   <Placemark>
     <name>Eiscafe de Luca</name>
-    <Snippet>Eiscafe de Luca, Foehrenstr. 42, taegl. 10:00 - 22:00 Uhr</Snippet>
-    <description><![CDATA[Eiscafe de Luca, Foehrenstr. 42, taegl. 10:00 - 22:00 Uhr]]></description>
+    <Snippet>Eiscafe de Luca, Foehrenstr. 42, taeglich 10:00 - 22:00 Uhr</Snippet>
+    <description><![CDATA[Eiscafe de Luca, Foehrenstr. 42, taeglich 10:00 - 22:00 Uhr]]></description>
     <styleUrl>#style63</styleUrl>
     <Point>
       <coordinates>8.876958,53.063465,0.000000</coordinates>
@@ -1011,8 +1011,8 @@
   </Placemark>
   <Placemark>
     <name>Micky Maus</name>
-    <Snippet>Micky Maus, Brueggenweg 29, taegl. 00:00-24:00 Uhr</Snippet>
-    <description><![CDATA[Micky Maus, Brueggenweg 29, taegl. 00:00-24:00 Uhr]]></description>
+    <Snippet>Micky Maus, Brueggenweg 29, taeglich 00:00-24:00 Uhr</Snippet>
+    <description><![CDATA[Micky Maus, Brueggenweg 29, taeglich 00:00-24:00 Uhr]]></description>
     <styleUrl>#style57</styleUrl>
     <Point>
       <coordinates>8.894240,53.053432,0.000000</coordinates>
@@ -1020,8 +1020,8 @@
   </Placemark>
   <Placemark>
     <name>Aral Tankstelle</name>
-    <Snippet>Aral Tankstelle, Hannoverschestr. 142, taegl. 00:00-24:00 Uhr</Snippet>
-    <description><![CDATA[Aral Tankstelle, Hannoverschestr. 142, taegl. 00:00-24:00 Uhr]]></description>
+    <Snippet>Aral Tankstelle, Hannoverschestr. 142, taeglich 00:00-24:00 Uhr</Snippet>
+    <description><![CDATA[Aral Tankstelle, Hannoverschestr. 142, taeglich 00:00-24:00 Uhr]]></description>
     <styleUrl>#style16</styleUrl>
     <Point>
       <coordinates>8.891580,53.048313,0.000000</coordinates>
