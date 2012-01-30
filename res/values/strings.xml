@@ -30,5 +30,8 @@
     <string name="position_description_gps">Nutze GPS-Standort (Marker nicht verschiebbar)</string>
     <string name="position_gps">GPS-Standort verwenden</string>
     <string name="position_description_manual">Verschiebe Marker auf aktuellen Standort</string>
+    <string name="txt_legende">Zeichenerklärung</string>
+    <string name="txt_ueber">Über</string>
+    <string name="txt_thanks">Danke</string>
     
 </resources>

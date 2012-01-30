@@ -21,12 +21,24 @@ import de.bruns.restrooms.android.data.OpeningImageData;
 
 public class ShowHelpActivity extends ListActivity {
 
-	// FIXME - add about data
+	private static final String LINE_SEPERATOR = "\n";
 
 	public void onCreate(Bundle icicle) {
 		super.onCreate(icicle);
 	    setContentView(R.layout.show_help);
 		setListAdapter(new HelpListAdapter(this));
+		
+		String thanksText = "Map Icons Collection" + LINE_SEPERATOR  + //
+				"http://mapicons.nicolasmollet.com/" + LINE_SEPERATOR;
+		((TextView) findViewById(R.id.txt_thanks_content)).setText(thanksText);
+		
+		String ueberText = "Nette Toilette Navigator" + LINE_SEPERATOR  + //
+				"Prototyp für Wettbewerbe Apps4hb und Apps4de" + LINE_SEPERATOR  + //
+				"Version: 0.1" + LINE_SEPERATOR  + //
+				"Web: http://cartopol.com/apps4de/nette-toilette-navigator/" + LINE_SEPERATOR  + //
+				"Autor: Andreas Bruns" + LINE_SEPERATOR  + //
+				"Mail: a.bruns(at)gmx.de" + LINE_SEPERATOR;
+		((TextView) findViewById(R.id.txt_ueber_content)).setText(ueberText);
 		
 		// buttons
 		Button buttonAsList = (Button) findViewById(R.id.button_aslist);

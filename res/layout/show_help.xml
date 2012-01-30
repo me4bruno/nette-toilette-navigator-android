@@ -6,17 +6,69 @@
 	android:layout_width="fill_parent"
 	>
 
+    <TextView
+            android:id="@+id/txt_legende_header"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffff7700"
+			android:textColor="#ff000000"
+			android:textStyle="bold"
+			android:paddingLeft="5dp"
+            android:layout_alignParentTop="true"
+            android:text="@string/txt_legende" />	
+	
 	<ListView android:id="@+id/android:list" 
 	    android:layout_width="fill_parent"
 		android:layout_height="wrap_content" 
-		android:layout_marginTop="10dip"
+		android:layout_marginTop="20dip"
 		android:layout_alignParentTop="true"
-		android:layout_above="@+id/layout_buttons" 
+		android:layout_below="@+id/txt_legende_header" 
+		android:layout_above="@+id/txt_thanks_header" 
 		android:drawSelectorOnTop="false"
 		android:layout_marginBottom="10dip"
 		android:clickable="false" 
 		android:cacheColorHint="#00000000" />
 
+		<TextView
+            android:id="@+id/txt_thanks_header"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/txt_thanks_content" 
+            android:background="#ffff7700"
+			android:textColor="#ff000000"
+			android:textStyle="bold"
+			android:paddingLeft="5dp"
+            android:text="@string/txt_thanks" />
+	    
+	<TextView
+            android:id="@+id/txt_thanks_content"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" 
+            android:layout_above="@+id/txt_ueber_header" 
+            android:minLines="3"
+            android:maxLines="3"
+			android:paddingLeft="5dp"/>   
+			
+	    <TextView
+            android:id="@+id/txt_ueber_header"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/txt_ueber_content" 
+            android:background="#ffff7700"
+			android:textColor="#ff000000"
+			android:textStyle="bold"
+			android:paddingLeft="5dp"
+            android:text="@string/txt_ueber" />
+	    
+	<TextView
+            android:id="@+id/txt_ueber_content"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" 
+            android:layout_above="@+id/layout_buttons" 
+            android:minLines="10"
+            android:maxLines="10"
+			android:paddingLeft="5dp"/>    
+   
 	<LinearLayout
         android:id="@+id/layout_buttons" 
         android:layout_width="fill_parent"
@@ -40,7 +92,6 @@
         android:layout_height="wrap_content"
         android:text="@string/button_asmap" 
         />
-
 	</LinearLayout>
     
 </RelativeLayout>
