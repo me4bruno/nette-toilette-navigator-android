@@ -1,6 +1,7 @@
 package de.bruns.restrooms.android.activity;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import android.content.Intent;
@@ -14,11 +15,11 @@ import android.view.View;
 import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.maps.GeoPoint;
 import com.google.android.maps.ItemizedOverlay;
@@ -30,13 +31,10 @@ import com.google.android.maps.OverlayItem;
 import de.bruns.restrooms.android.R;
 import de.bruns.restrooms.android.service.CurrentPositionService;
 import de.bruns.restrooms.android.service.CurrentPositionService.CurrentPositionListener;
+import de.bruns.restrooms.android.service.RestroomDataService;
 
 public class SelectCurrentPositionActivity extends MapActivity {
 
-	// FIXME - remove radio button selection from xml, use service configuration
-	// FIXME - show address in text field, remove toast
-	// FIXME - recalculated distance, when closing activity
-	
 	private static final String LOG_TAG = SelectCurrentPositionActivity.class
 			.getSimpleName();
 
@@ -49,22 +47,25 @@ public class SelectCurrentPositionActivity extends MapActivity {
 	private RadioGroup radioGroup;
 	private TextView positionDescription;
 
-	private String position_description_manual;
-	private String position_description_gps;
+	private String positionDescriptionManual;
+	private String positionDescriptionGps;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		currentPositionService = CurrentPositionService.instance(this);
-		
-		position_description_gps = getResources().getString(R.string.position_description_gps);
-		position_description_manual = getResources().getString(R.string.position_description_manual);
-		
 		setContentView(R.layout.select_current_position);
 
+		currentPositionService = CurrentPositionService.instance(this);
+		
+		positionDescriptionGps = getResources().getString(R.string.position_description_gps);
+		positionDescriptionManual = getResources().getString(R.string.position_description_manual);
+		
+		((RadioButton) findViewById(R.id.rb_position_gps)).setChecked(currentPositionService.isUseGps());
+		((RadioButton) findViewById(R.id.rb_position_manual)).setChecked(!currentPositionService.isUseGps());
+		
 		positionDescription = (TextView) findViewById(R.id.text_position_description);
-		positionDescription.setText(position_description_manual);
+		positionDescription.setText(positionDescriptionManual);
 
 		radioGroup = (RadioGroup) findViewById(R.id.rg_position);
 		radioGroup.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -73,12 +74,12 @@ public class SelectCurrentPositionActivity extends MapActivity {
 			public void onCheckedChanged(RadioGroup group, int checkedId) {
 				switch (radioGroup.getCheckedRadioButtonId()) {
 				case R.id.rb_position_gps:
-					positionDescription.setText(position_description_gps);
+					positionDescription.setText(positionDescriptionGps);
 					currentPositionService.useGpsPosition();
 					Log.v(LOG_TAG, "Use GPS position");					
 					break;
 				case R.id.rb_position_manual:
-					positionDescription.setText(position_description_manual);
+					positionDescription.setText(positionDescriptionManual);
 					GeoPoint manualPosition = currentPositionService.getCurrentPosition();
 					currentPositionService.useManualPosition(manualPosition);
 					Log.v(LOG_TAG, "Use manuell position");
@@ -87,6 +88,10 @@ public class SelectCurrentPositionActivity extends MapActivity {
 				}
 			}
 		});
+		
+		// address
+		final TextView positionAddress = (TextView) findViewById(R.id.text_position_address);
+		positionAddress.setText("Standort: " + currentPositionService.getAddressOfPosition());
 		
 		// map view
 		mapView = (MapView) findViewById(R.id.select_current_position_map);
@@ -102,18 +107,9 @@ public class SelectCurrentPositionActivity extends MapActivity {
 						if (myPositionManualOverlay != null && currentPositionService.isUseGps()) {
 							myPositionManualOverlay.updatePosition(currentPosition);
 						}
-						
-						String logString = "Updated current position: "
-								+ "Latitude = "
-								+ currentPosition.getLatitudeE6()
-								+ ", Longitude = "
-								+ currentPosition.getLongitudeE6()
-								+ ", Address = "
-								+ currentPositionService.getAddressOfPosition();
-
+						String logString = "Standort: " + currentPositionService.getAddressOfPosition();
 						Log.v(LOG_TAG, logString);
-						Toast.makeText(getBaseContext(), logString,
-								Toast.LENGTH_SHORT).show();
+						positionAddress.setText(logString);
 						mapController.animateTo(currentPosition);
 					}
 				});
@@ -144,6 +140,14 @@ public class SelectCurrentPositionActivity extends MapActivity {
 				return true;
 			}
 		});
+	}
+	
+	@Override
+	protected void onPause() {
+		long startTime = new Date().getTime();
+		RestroomDataService.instance(this).calculateDistances();
+		Log.v(LOG_TAG, "Recalculating distances took " + (new Date().getTime() - startTime) + " ms.");
+		super.onPause();
 	}
 	
 	@Override

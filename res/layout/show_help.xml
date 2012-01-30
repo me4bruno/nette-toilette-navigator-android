@@ -65,8 +65,8 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" 
             android:layout_above="@+id/layout_buttons" 
-            android:minLines="10"
-            android:maxLines="10"
+            android:minLines="8"
+            android:maxLines="8"
 			android:paddingLeft="5dp"/>    
    
 	<LinearLayout
