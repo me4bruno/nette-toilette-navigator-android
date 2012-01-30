@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <name>Nette Toilette Bremen</name>
+  <description><![CDATA[Hier finden Sie "Nette Toiletten" in Bremen.]]></description>
+  
+  <Style id="style56">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Placemark>
+    <name>Lloyd Caffee</name>
+    <Snippet>Lloyd Caffee, Fabrikenufer 115,</Snippet>
+    <description><![CDATA[Lloyd Caffee, Fabrikenufer 115,]]></description>
+    <styleUrl>#style56</styleUrl>
+    <Point>
+      <coordinates>8.765818,53.102871,0.000000</coordinates>
+    </Point>
+  </Placemark>
+
+</Document>
+</kml>

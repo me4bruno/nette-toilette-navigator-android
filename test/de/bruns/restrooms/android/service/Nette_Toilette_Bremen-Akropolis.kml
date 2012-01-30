@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <name>Nette Toilette Bremen</name>
+  <description><![CDATA[Hier finden Sie "Nette Toiletten" in Bremen.]]></description>
+  
+  <Style id="style35">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Placemark>
+    <name>Akropolis,</name>
+    <Snippet>Akropolis, Lindenstr. 3, Mi-Mo 18:00- 23:00, So und Feiert. 12:00-15:00 + 18:00-</Snippet>
+    <description><![CDATA[Akropolis, Lindenstr. 3, Mi-Mo 18:00- 23:00, So und Feiert. 12:00-15:00 + 18:00-23:30 Uhr]]></description>
+    <styleUrl>#style35</styleUrl>
+    <Point>
+      <coordinates>8.609735,53.175743,0.000000</coordinates>
+    </Point>
+  </Placemark>
+
+</Document>
+</kml>

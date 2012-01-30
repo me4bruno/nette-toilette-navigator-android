@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <name>Nette Toilette Bremen</name>
+  <description><![CDATA[Hier finden Sie "Nette Toiletten" in Bremen.]]></description>
+
+  <Style id="style43">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>  
+  <Placemark>
+    <name>Sentosa</name>
+    <Snippet>Sentosa, Mo-So 12:00-15:00 u. 17:30-23:00 Uhr</Snippet>
+    <description><![CDATA[Sentosa, Mo-So 12:00-15:00 u. 17:30-23:00 Uhr]]></description>
+    <styleUrl>#style43</styleUrl>
+    <Point>
+      <coordinates>8.810620,53.096607,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  
+</Document>
+</kml>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <name>Nette Toilette Bremen</name>
+  <description><![CDATA[Hier finden Sie "Nette Toiletten" in Bremen.]]></description>
+
+  <Style id="style59">
+    <IconStyle>
+      <Icon>
+        <href>https://sites.google.com/site/nettetoilettebremen/home/NetteBremen.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Placemark>
+    <name>Witthus Heimtex-Fachmarkt</name>
+    <Snippet>Witthus Heimtex-Fachmarkt, Heidlerchenstr. 3a, Mo-Sa 9:00-18:00 Uhr</Snippet>
+    <description><![CDATA[Witthus Heimtex-Fachmarkt, Heidlerchenstr. 3a, Mo-Sa 9:00-18:00 Uhr]]></description>
+    <styleUrl>#style59</styleUrl>
+    <Point>
+      <coordinates>8.555577,53.192463,0.000000</coordinates>
+    </Point>
+  </Placemark>
+
+</Document>
+</kml>
