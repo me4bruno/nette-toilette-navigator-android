@@ -4,7 +4,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnCancelListener;
 import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Point;
@@ -12,6 +15,7 @@ import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -55,6 +59,9 @@ public class SelectCurrentPositionActivity extends MapActivity {
 	private LocationManager locationManager;
 	private CurrentPositionService currentPositionService;
 
+	private ProgressDialog gpsProgressDialog;
+	private boolean isWaitingForGpsLocation;
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -68,8 +75,7 @@ public class SelectCurrentPositionActivity extends MapActivity {
 		positionDescriptionGps = getResources().getString(R.string.position_description_gps);
 		positionDescriptionManual = getResources().getString(R.string.position_description_manual);
 		
-		((RadioButton) findViewById(R.id.rb_position_gps)).setChecked(currentPositionService.isUseGps());
-		((RadioButton) findViewById(R.id.rb_position_manual)).setChecked(!currentPositionService.isUseGps());
+		updateRadioGroupSelection();
 		
 		positionDescription = (TextView) findViewById(R.id.text_position_description);
 		positionDescription.setText(positionDescriptionManual);
@@ -81,13 +87,27 @@ public class SelectCurrentPositionActivity extends MapActivity {
 			public void onCheckedChanged(RadioGroup group, int checkedId) {
 				switch (radioGroup.getCheckedRadioButtonId()) {
 				case R.id.rb_position_gps:
-					positionDescription.setText(positionDescriptionGps);
 					currentPositionService.setUseGps(true);
-					Log.v(LOG_TAG, "Use GPS position");					
+					positionDescription.setText(positionDescriptionGps);
+					Log.v(LOG_TAG, "Use GPS position");			
+					
+					gpsProgressDialog = ProgressDialog.show(SelectCurrentPositionActivity.this, "Warten", "Warte auf GPS Standort...",
+							true);
+					gpsProgressDialog.setCancelable(true);
+					
+					final WaitForLocationTask task = new WaitForLocationTask();
+					gpsProgressDialog.setOnCancelListener(new OnCancelListener() {
+						@Override
+						public void onCancel(DialogInterface dialog) {
+							task.cancel(true);
+						}
+					});
+					task.execute();
+					
 					break;
 				case R.id.rb_position_manual:
-					positionDescription.setText(positionDescriptionManual);
 					currentPositionService.setUseGps(false);
+					positionDescription.setText(positionDescriptionManual);
 					Log.v(LOG_TAG, "Use manuell position");
 					break;
 				default:
@@ -129,6 +149,11 @@ public class SelectCurrentPositionActivity extends MapActivity {
 		mapView.invalidate();
 		
 		updateCurrentPosition(currentPositionService.getCurrentPosition());
+	}
+
+	private void updateRadioGroupSelection() {
+		((RadioButton) findViewById(R.id.rb_position_gps)).setChecked(currentPositionService.isUseGps());
+		((RadioButton) findViewById(R.id.rb_position_manual)).setChecked(!currentPositionService.isUseGps());
 	}
 	
 	@Override
@@ -260,6 +285,7 @@ public class SelectCurrentPositionActivity extends MapActivity {
 			GeoPoint currentGpsPosition = new GeoPoint(latE6, lngE6);
 			Log.v(LOG_TAG, "Gps position changed: " + currentGpsPosition);
 
+			isWaitingForGpsLocation = false;
 			if (currentPositionService.isUseGps()) {
 				updateCurrentPosition(currentGpsPosition);
 			}
@@ -283,7 +309,7 @@ public class SelectCurrentPositionActivity extends MapActivity {
 
 	@Override
 	protected void onResume() {
-		locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000,
+		locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 3000,
 				0, locationListener);
 		super.onResume();
 	}
@@ -302,14 +328,44 @@ public class SelectCurrentPositionActivity extends MapActivity {
 	private void updateCurrentPosition(GeoPoint currentPosition) {
 		currentPositionService.updateCurrentPosition(currentPosition);
 		
-		if (myPositionManualOverlay != null && currentPositionService.isUseGps()) {
+		if (currentPositionService.isUseGps()) {
 			myPositionManualOverlay.updatePosition(currentPosition);
 		}
 		String logString = "Standort: " + currentPositionService.getAddressOfPosition();
 		Log.v(LOG_TAG, logString);
 		
 		((TextView) findViewById(R.id.text_position_address)).setText(logString);
+		
+		int distanceInMeterToBremenCity = currentPositionService.distanceInMeterToBremenCity();
+		mapController.setZoom(CurrentPositionService.getZoomForDistance(distanceInMeterToBremenCity));
 		mapController.animateTo(currentPosition);
 	}
 	
+	private class WaitForLocationTask extends AsyncTask<Void, Void, Void> {
+		private boolean running = true;
+
+		@Override
+		protected Void doInBackground(Void... params) {
+			isWaitingForGpsLocation = true;
+			while (running && isWaitingForGpsLocation)
+				try {
+					Thread.sleep(100);
+				} catch (InterruptedException e) {
+				}
+			return null;
+		}
+
+		@Override
+		protected void onCancelled() {
+			running = false;
+			gpsProgressDialog.dismiss();
+			super.onCancelled();
+		}
+
+		@Override
+		protected void onPostExecute(Void result) {
+			gpsProgressDialog.dismiss();
+			super.onPostExecute(result);
+		}
+	}
 }
