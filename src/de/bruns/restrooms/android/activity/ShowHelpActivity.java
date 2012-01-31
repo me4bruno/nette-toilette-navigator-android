@@ -33,8 +33,8 @@ public class ShowHelpActivity extends ListActivity {
 		((TextView) findViewById(R.id.txt_thanks_content)).setText(thanksText);
 		
 		String ueberText = "Nette Toilette Navigator" + LINE_SEPERATOR  + //
-				"Prototyp für Wettbewerbe Apps4hb und Apps4de" + LINE_SEPERATOR  + //
-				"Version: 0.1" + LINE_SEPERATOR  + //
+				"Prototyp für Wettbewerbe Apps4HB und Apps4DE" + LINE_SEPERATOR  + //
+				"Version: 0.1.1" + LINE_SEPERATOR  + //
 				"Web: http://cartopol.com/apps4de/nette-toilette-navigator/" + LINE_SEPERATOR  + //
 				"Autor: Andreas Bruns" + LINE_SEPERATOR  + //
 				"Mail: a.bruns(at)gmx.de" + LINE_SEPERATOR;
