@@ -4,10 +4,14 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Point;
 import android.graphics.drawable.Drawable;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -30,15 +34,12 @@ import com.google.android.maps.OverlayItem;
 
 import de.bruns.restrooms.android.R;
 import de.bruns.restrooms.android.service.CurrentPositionService;
-import de.bruns.restrooms.android.service.CurrentPositionService.CurrentPositionListener;
 import de.bruns.restrooms.android.service.RestroomDataService;
 
 public class SelectCurrentPositionActivity extends MapActivity {
 
 	private static final String LOG_TAG = SelectCurrentPositionActivity.class
 			.getSimpleName();
-
-	private CurrentPositionService currentPositionService;
 
 	private MapView mapView;
 	private MapController mapController;
@@ -50,12 +51,18 @@ public class SelectCurrentPositionActivity extends MapActivity {
 	private String positionDescriptionManual;
 	private String positionDescriptionGps;
 
+	private LocationListener locationListener;
+	private LocationManager locationManager;
+	private CurrentPositionService currentPositionService;
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
 		setContentView(R.layout.select_current_position);
 
+		locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+		locationListener = new MyLocationListener();
 		currentPositionService = CurrentPositionService.instance(this);
 		
 		positionDescriptionGps = getResources().getString(R.string.position_description_gps);
@@ -75,53 +82,18 @@ public class SelectCurrentPositionActivity extends MapActivity {
 				switch (radioGroup.getCheckedRadioButtonId()) {
 				case R.id.rb_position_gps:
 					positionDescription.setText(positionDescriptionGps);
-					currentPositionService.useGpsPosition();
+					currentPositionService.setUseGps(true);
 					Log.v(LOG_TAG, "Use GPS position");					
 					break;
 				case R.id.rb_position_manual:
 					positionDescription.setText(positionDescriptionManual);
-					GeoPoint manualPosition = currentPositionService.getCurrentPosition();
-					currentPositionService.useManualPosition(manualPosition);
+					currentPositionService.setUseGps(false);
 					Log.v(LOG_TAG, "Use manuell position");
 					break;
 				default:
 				}
 			}
 		});
-		
-		// address
-		final TextView positionAddress = (TextView) findViewById(R.id.text_position_address);
-		positionAddress.setText("Standort: " + currentPositionService.getAddressOfPosition());
-		
-		// map view
-		mapView = (MapView) findViewById(R.id.select_current_position_map);
-		mapController = mapView.getController();
-		mapController.setZoom(10);
-		mapView.setBuiltInZoomControls(true);
-
-		// current position service
-		currentPositionService
-				.addCurrentPositionListener(new CurrentPositionListener() {
-					@Override
-					public void positionUpdated(GeoPoint currentPosition) {
-						if (myPositionManualOverlay != null && currentPositionService.isUseGps()) {
-							myPositionManualOverlay.updatePosition(currentPosition);
-						}
-						String logString = "Standort: " + currentPositionService.getAddressOfPosition();
-						Log.v(LOG_TAG, logString);
-						positionAddress.setText(logString);
-						mapController.animateTo(currentPosition);
-					}
-				});
-
-		Drawable marker = getResources().getDrawable(R.drawable.you_are_here);
-		marker.setBounds(0, 0, marker.getIntrinsicWidth(),
-				marker.getIntrinsicHeight());
-		
-		myPositionManualOverlay = new MyPositionManualOverlay(marker);
-		mapView.getOverlays().add(myPositionManualOverlay);
-		
-		mapView.invalidate();
 		
 		// buttons
 		Button buttonAsList = (Button) findViewById(R.id.button_aslist);
@@ -140,14 +112,23 @@ public class SelectCurrentPositionActivity extends MapActivity {
 				return true;
 			}
 		});
-	}
-	
-	@Override
-	protected void onPause() {
-		long startTime = new Date().getTime();
-		RestroomDataService.instance(this).calculateDistances();
-		Log.v(LOG_TAG, "Recalculating distances took " + (new Date().getTime() - startTime) + " ms.");
-		super.onPause();
+
+		// map view
+		mapView = (MapView) findViewById(R.id.select_current_position_map);
+		mapController = mapView.getController();
+		int distanceInMeterToBremenCity = currentPositionService.distanceInMeterToBremenCity();
+		mapController.setZoom(CurrentPositionService.getZoomForDistance(distanceInMeterToBremenCity));
+		mapView.setBuiltInZoomControls(true);
+
+		Drawable marker = getResources().getDrawable(R.drawable.you_are_here);
+		marker.setBounds(0, 0, marker.getIntrinsicWidth(),
+				marker.getIntrinsicHeight());
+		
+		myPositionManualOverlay = new MyPositionManualOverlay(marker);
+		mapView.getOverlays().add(myPositionManualOverlay);
+		mapView.invalidate();
+		
+		updateCurrentPosition(currentPositionService.getCurrentPosition());
 	}
 	
 	@Override
@@ -241,9 +222,9 @@ public class SelectCurrentPositionActivity extends MapActivity {
 				} else if (action == MotionEvent.ACTION_UP && inDrag != null) {
 					dragImage.setVisibility(View.GONE);
 					
-					GeoPoint pt = mapView.getProjection().fromPixels(
+					GeoPoint currentPosition = mapView.getProjection().fromPixels(
 							x - xDragTouchOffset, y - yDragTouchOffset);
-					OverlayItem toDrop = new OverlayItem(pt, inDrag.getTitle(),
+					OverlayItem toDrop = new OverlayItem(currentPosition, inDrag.getTitle(),
 							inDrag.getSnippet());
 					
 					items.add(toDrop);
@@ -252,7 +233,7 @@ public class SelectCurrentPositionActivity extends MapActivity {
 					inDrag = null;
 					result = true;
 					
-					currentPositionService.useManualPosition(pt);
+					updateCurrentPosition(currentPosition);
 				}
 			}
 
@@ -269,4 +250,66 @@ public class SelectCurrentPositionActivity extends MapActivity {
 		}
 	}
 
+	public class MyLocationListener implements LocationListener {
+
+		@Override
+		public void onLocationChanged(Location loc) {
+			int latE6 = (int) (loc.getLatitude() * 1E6);
+			int lngE6 = (int) (loc.getLongitude() * 1E6);
+
+			GeoPoint currentGpsPosition = new GeoPoint(latE6, lngE6);
+			Log.v(LOG_TAG, "Gps position changed: " + currentGpsPosition);
+
+			if (currentPositionService.isUseGps()) {
+				updateCurrentPosition(currentGpsPosition);
+			}
+		}
+
+		@Override
+		public void onProviderDisabled(String provider) {
+			Log.v(LOG_TAG, "Gps disabled: " + provider);
+		}
+
+		@Override
+		public void onProviderEnabled(String provider) {
+			Log.v(LOG_TAG, "Gps enabled: " + provider);
+		}
+
+		@Override
+		public void onStatusChanged(String provider, int status, Bundle extras) {
+			Log.v(LOG_TAG, "Gps status changes: " + status + " - " + provider);
+		}
+	}
+
+	@Override
+	protected void onResume() {
+		locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000,
+				0, locationListener);
+		super.onResume();
+	}
+	
+	
+	@Override
+	protected void onPause() {
+		locationManager.removeUpdates(locationListener);
+		
+		long startTime = new Date().getTime();
+		RestroomDataService.instance(this).calculateDistances();
+		Log.v(LOG_TAG, "Recalculating distances took " + (new Date().getTime() - startTime) + " ms.");
+		super.onPause();
+	}
+	
+	private void updateCurrentPosition(GeoPoint currentPosition) {
+		currentPositionService.updateCurrentPosition(currentPosition);
+		
+		if (myPositionManualOverlay != null && currentPositionService.isUseGps()) {
+			myPositionManualOverlay.updatePosition(currentPosition);
+		}
+		String logString = "Standort: " + currentPositionService.getAddressOfPosition();
+		Log.v(LOG_TAG, logString);
+		
+		((TextView) findViewById(R.id.text_position_address)).setText(logString);
+		mapController.animateTo(currentPosition);
+	}
+	
 }

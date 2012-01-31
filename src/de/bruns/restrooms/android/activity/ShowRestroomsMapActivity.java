@@ -35,24 +35,26 @@ public class ShowRestroomsMapActivity extends MapActivity {
 	private MapView mapView;
 	private MapController mapController;
 	private TimeService timeService;
+	private CurrentPositionService currentPositionService;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
 		timeService = TimeService.instance();
+		currentPositionService = CurrentPositionService.instance(this);
 		
 		setContentView(R.layout.show_restrooms_map);
 
 		mapView = (MapView) findViewById(R.id.show_map_map);
 		mapController = mapView.getController();
 
-		int maxZoomLevel = mapView.getMaxZoomLevel();
-		mapController.setZoom(maxZoomLevel - 3);
+		int distanceInMeterToBremenCity = currentPositionService.distanceInMeterToBremenCity();
+		mapController.setZoom(CurrentPositionService.getZoomForDistance(distanceInMeterToBremenCity));
 
 		mapView.setBuiltInZoomControls(true); 
 
-		mapController.animateTo(CurrentPositionService.instance(this).getCurrentPosition());
+		mapController.animateTo(currentPositionService.getCurrentPosition());
 
 		// overlay
 		mapView.getOverlays().add(new RestroomItemizedOverlay(this));
@@ -61,7 +63,6 @@ public class ShowRestroomsMapActivity extends MapActivity {
 		SingleItemOverlay myPositionOverlay = new SingleItemOverlay(this, this
 				.getResources().getDrawable(R.drawable.you_are_here),currentPosition, "Mein Standort");
 		mapView.getOverlays().add(myPositionOverlay);
-		
 		
 		// buttons
 		Button buttonAsList = (Button) findViewById(R.id.button_aslist);

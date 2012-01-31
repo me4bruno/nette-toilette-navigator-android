@@ -68,7 +68,7 @@ public class ShowRestroomDataActivity extends MapActivity {
 
 		MapController mapController = mapView.getController();
 		
-		int zoom = getZoomForDistance(restroom.getDistanceInMeter());
+		int zoom = CurrentPositionService.getZoomForDistance(restroom.getDistanceInMeter());
 		mapController.setZoom(zoom);
 		mapController.setCenter(restroomLocation);
 
@@ -138,25 +138,4 @@ public class ShowRestroomDataActivity extends MapActivity {
 		return false;
 	}
 
-	private int getZoomForDistance(int distanceInMeter) {
-		int zoom = 11;
-		if (distanceInMeter  < 50) {
-			zoom = 19;
-		} else if (distanceInMeter  < 125) {
-			zoom = 18;
-		} else if (distanceInMeter  < 250) {
-			zoom = 17;
-		} else if (distanceInMeter  < 500) {
-			zoom = 16;
-		} else if (distanceInMeter  < 1250) {
-			zoom = 15;
-		} else if (distanceInMeter  < 2500) {
-			zoom = 14;
-		} else if (distanceInMeter  < 5000) {
-			zoom = 13;
-		} else if (distanceInMeter  < 12500) {
-			zoom = 12;
-		}
-		return zoom;
-	}
 }

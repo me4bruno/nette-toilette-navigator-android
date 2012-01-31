@@ -1,7 +1,6 @@
 package de.bruns.restrooms.android.service;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -9,30 +8,25 @@ import android.content.Context;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
-import android.os.Bundle;
 import android.util.Log;
 
 import com.google.android.maps.GeoPoint;
 
 public class CurrentPositionService {
 
-	public static interface CurrentPositionListener {
-		public void positionUpdated(GeoPoint currentPosition);
-	}
-
+	
 	private static final String LOG_TAG = CurrentPositionService.class
 			.getSimpleName();
-	private static final GeoPoint GEO_POINT_BREMEN = new GeoPoint(
-			(int) (53.075813 * 1E6), (int) (8.807357 * 1E6));
+
+	private static final double BREMEN_LONGITUDE = 8.807357;
+	private static final double BREMEN_LATITUDE = 53.075813;
+	private static final GeoPoint BREMEN_GEO_POINT = new GeoPoint(
+			(int) (BREMEN_LATITUDE * 1E6), (int) (BREMEN_LONGITUDE * 1E6));
+
 	private static CurrentPositionService instance;
 
 	private GeoPoint currentPosition;
-	private GeoPoint currentGpsPosition;
 	private boolean useGps;
-
-	private List<CurrentPositionListener> currentPositionListeners;
 	private final Geocoder geocoder;
 	
 	public static CurrentPositionService instance(Context context) {
@@ -43,21 +37,14 @@ public class CurrentPositionService {
 	}
 	
 	private CurrentPositionService(Context context) {
-		LocationManager locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
 		geocoder = new Geocoder(context, Locale.getDefault());
 		
-		currentPosition = GEO_POINT_BREMEN;
-		currentGpsPosition = GEO_POINT_BREMEN;
+		currentPosition = BREMEN_GEO_POINT;
 		useGps = false;
-		currentPositionListeners = new ArrayList<CurrentPositionListener>();
-
-		LocationListener locationListener = new MyLocationListener();
-		locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0,
-				0, locationListener);
 	}
 
 	public String getAddressOfPosition() {
-		String addressString = "No location found";
+		String addressString = "Adresse nicht gefunden.";
 		double lat = getCurrentLatitude();
 		double lng = getCurrentLongitude();
 
@@ -87,64 +74,60 @@ public class CurrentPositionService {
 		return currentPosition.getLatitudeE6() / ((double) 1E6);
 	}
 
-	public void useGpsPosition() {
-		this.useGps = true;
-		updateCurrentPosition(currentGpsPosition);
-	}
-
-	public void useManualPosition(GeoPoint manualPosition) {
-		this.useGps = false;
-		updateCurrentPosition(manualPosition);
-	}
-
 	public boolean isUseGps() {
 		return useGps;
 	}
 
-	public void addCurrentPositionListener(CurrentPositionListener listener) {
-		currentPositionListeners.add(listener);
-		listener.positionUpdated(currentPosition);
-	}
-
-	private void updateCurrentPosition(GeoPoint newCurrentPosition) {
-		currentPosition = newCurrentPosition;
-		for (CurrentPositionListener listener : currentPositionListeners) {
-			listener.positionUpdated(currentPosition);
-		}
+	public void setUseGps(boolean useGps) {
+		this.useGps = useGps;
 	}
 
 	public GeoPoint getCurrentPosition() {
 		return currentPosition;
 	}
 
-	public class MyLocationListener implements LocationListener {
-
-		@Override
-		public void onLocationChanged(Location loc) {
-			int latE6 = (int) (loc.getLatitude() * 1E6);
-			int lngE6 = (int) (loc.getLongitude() * 1E6);
-
-			currentGpsPosition = new GeoPoint(latE6, lngE6);
-			if (useGps) {
-				updateCurrentPosition(currentGpsPosition);
-			}
-
-			Log.v(LOG_TAG, "Gps position changed: " + currentGpsPosition);
-		}
-
-		@Override
-		public void onProviderDisabled(String provider) {
-			Log.v(LOG_TAG, "Gps disabled: " + provider);
-		}
-
-		@Override
-		public void onProviderEnabled(String provider) {
-			Log.v(LOG_TAG, "Gps enabled: " + provider);
-		}
-
-		@Override
-		public void onStatusChanged(String provider, int status, Bundle extras) {
-			Log.v(LOG_TAG, "Gps status changes: " + status + " - " + provider);
-		}
+	public void updateCurrentPosition(GeoPoint currentPosition) {
+		this.currentPosition = currentPosition;
 	}
+	
+	public int distanceInMeterToBremenCity() {
+		Location myLocation = new Location((String)null);
+		myLocation.setLatitude(getCurrentLatitude());
+		myLocation.setLongitude(getCurrentLongitude());
+		
+		Location bremenLocation = new Location((String)null);
+		bremenLocation.setLatitude(BREMEN_LATITUDE);
+		bremenLocation.setLongitude(BREMEN_LONGITUDE);
+		
+		return (int) myLocation.distanceTo(bremenLocation);
+	}
+	
+	public static int getZoomForDistance(int distanceInMeter) {
+		int zoom = 8;
+		if (distanceInMeter  < 50) {
+			zoom = 19;
+		} else if (distanceInMeter  < 125) {
+			zoom = 18;
+		} else if (distanceInMeter  < 250) {
+			zoom = 17;
+		} else if (distanceInMeter  < 500) {
+			zoom = 16;
+		} else if (distanceInMeter  < 1250) {
+			zoom = 15;
+		} else if (distanceInMeter  < 2500) {
+			zoom = 14;
+		} else if (distanceInMeter  < 5000) {
+			zoom = 13;
+		} else if (distanceInMeter  < 12500) {
+			zoom = 12;
+		} else if (distanceInMeter  < 25000) {
+			zoom = 11;
+		} else if (distanceInMeter  < 50000) {
+			zoom = 10;
+		} else if (distanceInMeter  < 100000) {
+			zoom = 9;
+		}
+		return zoom;
+	}
+
 }

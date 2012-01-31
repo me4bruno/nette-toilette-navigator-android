@@ -9,7 +9,7 @@ import android.location.Location;
 import de.bruns.restrooms.android.data.RestroomData;
 
 /**
- * Android depnding service for handling the restroom data.
+ * Android depending service for handling the restroom data.
  */
 public class RestroomDataService {
 
