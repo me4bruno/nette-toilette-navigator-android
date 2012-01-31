@@ -75,7 +75,8 @@ public class SelectCurrentPositionActivity extends MapActivity {
 		positionDescriptionGps = getResources().getString(R.string.position_description_gps);
 		positionDescriptionManual = getResources().getString(R.string.position_description_manual);
 		
-		updateRadioGroupSelection();
+		((RadioButton) findViewById(R.id.rb_position_gps)).setChecked(currentPositionService.isUseGps());
+		((RadioButton) findViewById(R.id.rb_position_manual)).setChecked(!currentPositionService.isUseGps());
 		
 		positionDescription = (TextView) findViewById(R.id.text_position_description);
 		positionDescription.setText(positionDescriptionManual);
@@ -91,7 +92,7 @@ public class SelectCurrentPositionActivity extends MapActivity {
 					positionDescription.setText(positionDescriptionGps);
 					Log.v(LOG_TAG, "Use GPS position");			
 					
-					gpsProgressDialog = ProgressDialog.show(SelectCurrentPositionActivity.this, "Warten", "Warte auf GPS Standort...",
+					gpsProgressDialog = ProgressDialog.show(SelectCurrentPositionActivity.this, "Warten", "GPS wird gesucht...",
 							true);
 					gpsProgressDialog.setCancelable(true);
 					
@@ -151,11 +152,6 @@ public class SelectCurrentPositionActivity extends MapActivity {
 		updateCurrentPosition(currentPositionService.getCurrentPosition());
 	}
 
-	private void updateRadioGroupSelection() {
-		((RadioButton) findViewById(R.id.rb_position_gps)).setChecked(currentPositionService.isUseGps());
-		((RadioButton) findViewById(R.id.rb_position_manual)).setChecked(!currentPositionService.isUseGps());
-	}
-	
 	@Override
 	protected boolean isRouteDisplayed() {
 		return false;
@@ -309,7 +305,7 @@ public class SelectCurrentPositionActivity extends MapActivity {
 
 	@Override
 	protected void onResume() {
-		locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 3000,
+		locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000,
 				0, locationListener);
 		super.onResume();
 	}
@@ -349,7 +345,7 @@ public class SelectCurrentPositionActivity extends MapActivity {
 			isWaitingForGpsLocation = true;
 			while (running && isWaitingForGpsLocation)
 				try {
-					Thread.sleep(100);
+					Thread.sleep(1000);
 				} catch (InterruptedException e) {
 				}
 			return null;
