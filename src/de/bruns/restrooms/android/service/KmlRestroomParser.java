@@ -1,3 +1,18 @@
+/*
+ * Copyright 2012 Andreas Bruns
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package de.bruns.restrooms.android.service;
 
 import java.io.InputStream;
@@ -18,13 +33,12 @@ import de.bruns.restrooms.android.data.RestroomData;
 
 public class KmlRestroomParser {
 
-	private final static String NS_KML_2 = "http://earth.google.com/kml/2.";
+	private final static String NAMESPACE_KML_2 = "http://earth.google.com/kml/2.";
 	private final static String NODE_PLACEMARK = "Placemark";
 	private final static String NODE_NAME = "name";
 	private final static String NODE_SNIPPET = "description";
 	private final static String NODE_COORDINATES = "coordinates";
-
-	private final static Pattern locationPattern = Pattern
+	private final static Pattern LOCATION_PATTERN = Pattern
 			.compile("([^,]+),([^,]+)(?:,([^,]+))?");
 
 	private List<RestroomData> allRestroomData;
@@ -60,7 +74,7 @@ public class KmlRestroomParser {
 		public void startElement(String uri, String localName, String name,
 				Attributes attributes) throws SAXException {
 			try {
-				if (uri.startsWith(NS_KML_2)) {
+				if (uri.startsWith(NAMESPACE_KML_2)) {
 					if (NODE_PLACEMARK.equals(localName)) {
 						currentRestroomData = new RestroomData();
 						allRestroomData.add(currentRestroomData);
@@ -80,7 +94,7 @@ public class KmlRestroomParser {
 		@Override
 		public void endElement(String uri, String localName, String name)
 				throws SAXException {
-			if (uri.startsWith(NS_KML_2)) {
+			if (uri.startsWith(NAMESPACE_KML_2)) {
 				if (NODE_PLACEMARK.equals(localName)) {
 					currentRestroomData = null;
 				} else if (NODE_NAME.equals(localName)) {
@@ -95,7 +109,7 @@ public class KmlRestroomParser {
 					}
 				} else if (NODE_COORDINATES.equals(localName)) {
 					if (currentRestroomData != null) {
-						Matcher m = locationPattern.matcher(stringAccumulator
+						Matcher m = LOCATION_PATTERN.matcher(stringAccumulator
 								.toString());
 						if (m.matches()) {
 							try {
